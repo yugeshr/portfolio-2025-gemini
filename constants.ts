@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { Project, ExperienceItem, SocialLink, Testimonial } from './types';
 
 export const NAV_LINKS = [
@@ -7,14 +8,24 @@ export const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
+// Helper to handle base path for assets
+const getAssetPath = (path: string) => {
+  const baseUrl = import.meta.env.BASE_URL;
+  // Remove leading slash from path if it exists to avoid double slashes
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${baseUrl}${cleanPath}`;
+};
+
 export const CLIENTS = [
-  { name: 'Intel', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg' },
-  { name: 'Cisco', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg' },
-  { name: 'Texas Instruments', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Texas_Instruments_logo_-_stacked.svg/1200px-Texas_Instruments_logo_-_stacked.svg.png' },
-  { name: 'Grepsr', logo: 'https://assets.grepsr.com/grepsr-logo-dark.svg' }, // Fallback text if needed
-  { name: 'Ramco', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Ramco_Systems_logo.svg' },
-  { name: 'Indiamart', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Indiamart_logo.svg' },
-  { name: 'Ducen', logo: 'https://ducenit.com/images/logo-light.png' }, // Placeholder
+  { name: 'Intel', logo: getAssetPath('logos/intel.png') },
+  { name: 'Cisco', logo: getAssetPath('logos/cisco.png') },
+  { name: 'Ramco Systems', logo: getAssetPath('logos/ramco.png') },
+  { name: 'Hexaware', logo: getAssetPath('logos/hexaware.png') },
+  { name: 'Grepsr', logo: getAssetPath('logos/grepsr.png') },
+  { name: 'Indiamart', logo: getAssetPath('logos/indiamart.png') },
+  { name: 'Firstpass', logo: getAssetPath('logos/firstpass.png') },
+  { name: 'Colandian', logo: getAssetPath('logos/colandian.png') },
+  { name: 'Duoveo', logo: getAssetPath('logos/duoveo.png') },
 ];
 
 export const PERSONAL_GALLERY = [
