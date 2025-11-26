@@ -1,0 +1,1 @@
+html{scroll-behavior:smooth;scroll-padding-top:100px}@keyframes scroll{0%{transform:translate(0)}to{transform:translate(-50%)}}.animate-scroll{animation:scroll 30s linear infinite}.animate-scroll:hover{animation-play-state:paused}
