@@ -122,7 +122,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const SOCIALS: SocialLink[] = [
   { platform: 'LinkedIn', url: 'https://linkedin.com/in/yugeshralli', label: 'LinkedIn' },
   { platform: 'Dribbble', url: 'https://dribbble.com/yugeshralli', label: 'Dribbble' },
-  { platform: 'Email', url: 'mailto:hello@yugeshralli.in', label: 'Email' },
+  { platform: 'Email', url: 'mailto:yugeshr16@gmail.com', label: 'Email' },
 ];
 
 export const CORE_COMPETENCIES = [

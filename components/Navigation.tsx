@@ -17,22 +17,22 @@ export const Navigation: React.FC = () => {
 
   const menuVariants: Variants = {
     closed: {
-        opacity: 0,
-        height: 0,
-        transition: {
-            duration: 0.3,
-            ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
-        }
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
+      }
     },
     open: {
-        opacity: 1,
-        height: '100vh',
-        transition: {
-            duration: 0.5,
-            ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-            staggerChildren: 0.1,
-            delayChildren: 0.2
-        }
+      opacity: 1,
+      height: '100vh',
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
     }
   };
 
@@ -47,9 +47,8 @@ export const Navigation: React.FC = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'py-4 glass-nav border-b border-border' : 'py-8 bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4 glass-nav border-b border-border' : 'py-8 bg-transparent'
+          }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <a href="#" className="text-xl font-bold tracking-tighter text-primary hover:opacity-70 transition-opacity">
@@ -70,14 +69,14 @@ export const Navigation: React.FC = () => {
                 {link.label}
               </motion.a>
             ))}
-            <motion.a 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                href="mailto:hello@yugeshralli.in"
-                className="px-6 py-2 border border-border rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all duration-300"
+            <motion.a
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              href="mailto:yugeshr16@gmail.com"
+              className="px-6 py-2 border border-border rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all duration-300"
             >
-                Get in Touch
+              Get in Touch
             </motion.a>
           </div>
 
@@ -115,11 +114,11 @@ export const Navigation: React.FC = () => {
                 </motion.a>
               ))}
               <motion.a
-                  variants={linkVariants}
-                  href="mailto:hello@yugeshralli.in"
-                  className="text-lg font-medium text-primary mt-8 inline-block border-b border-white/20 pb-1 w-fit"
+                variants={linkVariants}
+                href="mailto:yugeshr16@gmail.com"
+                className="text-lg font-medium text-primary mt-8 inline-block border-b border-white/20 pb-1 w-fit"
               >
-                  hello@yugeshralli.in
+                yugeshr16@gmail.com
               </motion.a>
             </div>
           </motion.div>
