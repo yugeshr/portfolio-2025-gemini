@@ -1,21 +1,10 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { PERSONAL_GALLERY } from '../constants';
+import { motion } from 'framer-motion';
+import InteractiveGrid from './InteractiveGrid';
 
 export const About: React.FC = () => {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-background">
+    <section id="about" className="py-32 relative bg-background">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
 
         {/* Top Section: Bio & Portrait */}
@@ -77,39 +66,7 @@ export const About: React.FC = () => {
         </div>
 
         {/* Bottom Section: Away from Keyboard */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="border-t border-white/5 pt-24"
-        >
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">When I'm away from keyboard</h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {PERSONAL_GALLERY.map((photo, index) => (
-              <motion.div
-                key={photo.id}
-                variants={{
-                  hidden: { opacity: 0, scale: 0.8 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
-                }}
-                className={`relative rounded-xl overflow-hidden aspect-[3/4] ${index % 2 === 0 ? 'mt-0' : 'mt-8'}`}
-              >
-                <img
-                  src={photo.url}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-xs text-white/90 font-medium">{photo.alt}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {/* <InteractiveGrid /> */}
 
       </div>
     </section>
