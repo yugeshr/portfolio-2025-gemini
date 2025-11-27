@@ -17,10 +17,10 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden bg-background">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-        
+
         {/* Top Section: Bio & Portrait */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center mb-32">
-          
+
           {/* Narrative */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,13 +33,13 @@ export const About: React.FC = () => {
               About Me
             </span>
             <h2 className="text-4xl md:text-6xl font-serif font-medium mb-10 leading-tight text-primary">
-              Designer, Traveler, Engineer <br/>
+              Designer, Traveler, Engineer <br />
               <span className="italic text-zinc-400">& Gamer.</span>
             </h2>
-            
+
             <div className="space-y-8 text-secondary text-lg md:text-xl font-light leading-relaxed max-w-2xl">
               <h3 className="text-white font-medium text-2xl">
-                Design isn’t just about pixels and trends—it’s about understanding people, their needs, and how they interact with technology.
+                Design isn’t just about pixels and trends. It’s about understanding people, their needs, and how they interact with technology.
               </h3>
               <p>
                 I’m a Senior Product Designer with 5 years of experience creating clean, intuitive interfaces that make complex ideas simple and people’s lives easier.
@@ -52,57 +52,57 @@ export const About: React.FC = () => {
 
           {/* Portrait Image */}
           <motion.div
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8, ease: "easeOut" }}
-             className="lg:col-span-5 relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-5 relative"
           >
-             <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative group">
-                {/* Grayscale to color on hover effect */}
-                <div className="absolute inset-0 bg-zinc-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
-                    alt="Yugesh Ralli" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
-             </div>
+            <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative group">
+              {/* Grayscale to color on hover effect */}
+              <div className="absolute inset-0 bg-zinc-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+                alt="Yugesh Ralli"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
           </motion.div>
         </div>
 
         {/* Bottom Section: Away from Keyboard */}
         <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="border-t border-white/5 pt-24"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="border-t border-white/5 pt-24"
         >
-             <div className="text-center mb-16">
-                 <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">When I'm away from keyboard</h2>
-             </div>
-             
-             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                 {PERSONAL_GALLERY.map((photo, index) => (
-                     <motion.div
-                        key={photo.id}
-                        variants={{
-                            hidden: { opacity: 0, scale: 0.8 },
-                            visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
-                        }}
-                        className={`relative rounded-xl overflow-hidden aspect-[3/4] ${index % 2 === 0 ? 'mt-0' : 'mt-8'}`}
-                     >
-                         <img 
-                            src={photo.url} 
-                            alt={photo.alt}
-                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" 
-                         />
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                             <span className="text-xs text-white/90 font-medium">{photo.alt}</span>
-                         </div>
-                     </motion.div>
-                 ))}
-             </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">When I'm away from keyboard</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {PERSONAL_GALLERY.map((photo, index) => (
+              <motion.div
+                key={photo.id}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
+                }}
+                className={`relative rounded-xl overflow-hidden aspect-[3/4] ${index % 2 === 0 ? 'mt-0' : 'mt-8'}`}
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-xs text-white/90 font-medium">{photo.alt}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
       </div>

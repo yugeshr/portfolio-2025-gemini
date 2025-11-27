@@ -40,7 +40,7 @@ export const PERSONAL_GALLERY = [
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Auzmor Learn Mentorship System',
+    title: 'Auzmor Learn',
     role: 'Product Designer',
     timeline: '6 Months',
     tags: ['UX Strategy', 'Enterprise SaaS', 'Zero-to-One'],
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '2',
-    title: 'Ramco Systems Legacy Redesign',
+    title: 'Ramco Systems',
     role: 'UI Designer',
     timeline: '6 Months',
     tags: ['Legacy Modernization', 'Design Systems', 'Visual Design'],
@@ -107,15 +107,39 @@ export const EXPERIENCE: ExperienceItem[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    quote: "Yugesh is a hardworking and proactive professional who consistently goes the extra mile. His expertise from building a website to creating Design Systems is in-depth. I'm happy to recommend him for his future endeavors.",
-    author: "Former Manager",
-    role: "Senior Design Lead"
+    quote: "What I appreciated most was his ability to get it. Whether it was a vague product idea, a messy user flow, or last-minute feedback before a demo, Yugesh always came through with thoughtful designs that looked great and worked even better. No fluff, no ego; Just solid, user-first design thinking.",
+    author: "Taran Anand",
+    role: "Product Manager at SaaS Labs"
   },
   {
     id: '2',
-    quote: "Working with him was nothing short of professional. He is very good at UI design and can work independently or as part of a team.",
-    author: "Client",
-    role: "Teleradiology Company"
+    quote: "This guy is very hardworking and extremely talented individual and has demonstrated a high level of professionalism, integrity and commitment. He is very good at UI design and can work independently or as part of a team.",
+    author: "Dr. Priya L",
+    role: "Professor at Rajalakshmi Engineering College"
+  },
+  {
+    id: '3',
+    quote: "Yugesh is an aspiring designer, quick learner and smart worker. We have worked together in many projects. His expertise from building a website to creating Design system he is in depth. I'm happy to recommend Yugesh for his future endeavors.",
+    author: "Shrivathsan G R",
+    role: "Lead Product Designer at Facilio"
+  },
+  {
+    id: '4',
+    quote: "Mr. Yugesh is part of the team that developed the software for my teleradiology company. My experience of working with him was nothing short of professional. While he was a reliable and fast worker, what impressed me the most was the dedication he showed to meeting the time frame I had set for them and his ability to come up with creative solutions to the glitches we came across. Also to be mentioned is that he worked through his vacation time!",
+    author: "Haree Shankar Meganathan",
+    role: "Vice Chairman at Rajalakshmi Institutions"
+  },
+  {
+    id: '5',
+    quote: "Yugesh is a hardworking and proactive professional who consistently goes the extra mile in everything he does. His creativity and dedication really stand out, bringing fresh ideas and great attention to detail to every product. More than just skilled, Yugesh is a fantastic team player - always ready to support others and collaborate to get the best results. His positive energy and commitment make a real difference, and I’m sure he’ll keep making a strong impact wherever he goes.",
+    author: "Mandeep Singh",
+    role: "Principal Product Manager at Auzmor"
+  },
+  {
+    id: '6',
+    quote: "Yugesh is a really creative UI designer. He is equipped with good visual design and coding skills. He is able to bring in best results while meeting the deadlines. He is a team player and at the same time is efficient enough to manage a project by himself",
+    author: "Susan Noby",
+    role: "Product Designer at Booking.com"
   }
 ];
 

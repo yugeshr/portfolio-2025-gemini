@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Hero } from './Hero';
 import { Clients } from './Clients';
 import { About } from './About';
@@ -7,8 +7,30 @@ import { Experience } from './Experience';
 import { Testimonials } from './Testimonials';
 import { PROJECTS } from '../constants';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 export const Home: React.FC = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state && (location.state as any).targetId) {
+            const targetId = (location.state as any).targetId;
+            const element = document.getElementById(targetId);
+            if (element) {
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }, 100);
+            }
+        }
+    }, [location]);
+
     return (
         <>
             {/* 1. Hero Section */}

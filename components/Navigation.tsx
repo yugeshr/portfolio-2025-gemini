@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +17,37 @@ export const Navigation: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+
+    if (location.pathname === '/') {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const headerOffset = 80; // Height of your fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    } else {
+      navigate('/', { state: { targetId } });
+    }
+    setIsOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
 
   const menuVariants: Variants = {
     closed: {
@@ -51,7 +85,7 @@ export const Navigation: React.FC = () => {
           }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-          <a href="#" className="text-xl font-bold tracking-tighter text-primary hover:opacity-70 transition-opacity">
+          <a href="/" onClick={handleLogoClick} className="text-xl font-bold tracking-tighter text-primary hover:opacity-70 transition-opacity">
             YR.
           </a>
 
@@ -64,7 +98,8 @@ export const Navigation: React.FC = () => {
                 transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-sm font-medium uppercase tracking-widest text-secondary hover:text-primary transition-colors cursor-pointer"
               >
                 {link.label}
               </motion.a>
@@ -107,7 +142,7 @@ export const Navigation: React.FC = () => {
                   variants={linkVariants}
                   key={link.label}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-5xl font-serif italic text-secondary hover:text-primary transition-colors"
                 >
                   {link.label}
