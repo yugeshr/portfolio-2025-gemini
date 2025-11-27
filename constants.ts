@@ -40,25 +40,25 @@ export const PERSONAL_GALLERY = [
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Auzmor Learn',
+    title: 'Scalable Mentorship for Auzmor Learn',
     role: 'Product Designer',
     timeline: '6 Months',
     tags: ['UX Strategy', 'Enterprise SaaS', 'Zero-to-One'],
     description: 'Expanding the LMS ecosystem to support scalable, goal-driven relationships between employees.',
-    challenge: 'Auzmor Learn needed to expand its LMS ecosystem to support scalable, goal-driven relationships between employees. The existing experience lacked a structured way for organizations to facilitate mentorship, resulting in informal, untracked, and often ineffective coaching.',
+    challenge: 'LMS lacked a structured framework for scalable mentorship, resulting in informal, untracked, and ineffective coaching relationships between employees.',
     solution: 'I led the end-to-end design of a comprehensive Mentorship System. I identified the need for Admin-assigned and Self-volunteered pairing models, created a "Goal & Milestone" framework, and designed tools for content sharing and feedback loops.',
     outcome: 'Successfully rolled out to enterprise clients as a core LMS feature with high adoption rates. Admins reported significantly reduced setup time for launching new mentorship programs.',
     imageUrl: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=2000',
   },
   {
     id: '2',
-    title: 'Ramco Systems',
+    title: 'Ramco Systems Redesign with Design System',
     role: 'UI Designer',
     timeline: '6 Months',
     tags: ['Legacy Modernization', 'Design Systems', 'Visual Design'],
     description: 'Transforming a 13-year-old legacy platform into a modern, approachable interface without losing data density capabilities.',
-    challenge: 'Ramco’s platform suffered from "data clutter" and high-density forms with poor hierarchy, leading to significant user friction.',
-    solution: 'I crafted a next-generation visual experience using an Atomic Design System as "Lego blocks" for consistency. I implemented a free-flowing 8-point grid system to improve scanability and shifted the aesthetic to a modern interface.',
+    challenge: 'Ramco\'s B2B dashboards were unstructured resulting in a steep learning curve due to unclear hierarchy and complex dependencies.',
+    solution: 'Crafted a modern visual experience using an Atomic Design System and 8-point grid for consistency and scanability.',
     outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language that the dev team could reuse for future modules.',
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000',
   },
@@ -141,6 +141,7 @@ export const TESTIMONIALS: Testimonial[] = [
     author: "Susan Noby",
     role: "Product Designer at Booking.com"
   }
+
 ];
 
 export const SOCIALS: SocialLink[] = [
