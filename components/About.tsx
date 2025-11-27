@@ -33,8 +33,8 @@ export const About: React.FC = () => {
               About Me
             </span>
             <h2 className="text-4xl md:text-6xl font-serif font-medium mb-10 leading-tight text-primary">
-              Designer, Traveler, Engineer <br />
-              <span className="italic text-zinc-400">& Gamer.</span>
+              Designer, Engineer <br />
+              <span className="italic text-zinc-400">Traveler & Gamer.</span>
             </h2>
 
             <div className="space-y-8 text-secondary text-lg md:text-xl font-light leading-relaxed max-w-2xl">
@@ -59,12 +59,18 @@ export const About: React.FC = () => {
             className="lg:col-span-5 relative"
           >
             <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative group">
-              {/* Grayscale to color on hover effect */}
-              <div className="absolute inset-0 bg-zinc-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              {/* Color Image (Reveals on hover) */}
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+                src="/portfolio-2025-gemini/images/profile-color.jpg"
                 alt="Yugesh Ralli"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"
+              />
+
+              {/* B&W Image (Default) */}
+              <img
+                src="/portfolio-2025-gemini/images/profile-bw.jpg"
+                alt="Yugesh Ralli"
+                className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
