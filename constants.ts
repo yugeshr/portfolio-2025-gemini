@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
     tags: ['UX Strategy', 'Enterprise SaaS', 'Zero-to-One'],
     description: 'Expanding the LMS ecosystem to support scalable, goal-driven relationships between employees.',
     challenge: 'LMS lacked a structured framework for scalable mentorship, resulting in informal, untracked, and ineffective coaching relationships between employees.',
-    solution: 'I led the end-to-end design of a comprehensive Mentorship System. I identified the need for Admin-assigned and Self-volunteered pairing models, created a "Goal & Milestone" framework, and designed tools for content sharing and feedback loops.',
+    solution: 'Led the end-to-end design of a comprehensive Mentorship System, introducing flexible pairing models (admin-assigned and self-service), a structured "Goal & Milestone" framework, and integrated feedback loops.',
     outcome: 'Successfully rolled out to enterprise clients as a core LMS feature with high adoption rates. Admins reported significantly reduced setup time for launching new mentorship programs.',
     imageUrl: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=2000',
   },
@@ -141,7 +141,6 @@ export const TESTIMONIALS: Testimonial[] = [
     author: "Susan Noby",
     role: "Product Designer at Booking.com"
   }
-
 ];
 
 export const SOCIALS: SocialLink[] = [

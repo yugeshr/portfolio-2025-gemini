@@ -7,14 +7,14 @@ export const Experience: React.FC = () => {
     <section id="experience" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16 md:mb-24"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 md:mb-24"
         >
-             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Experience</h2>
-             <div className="h-1 w-24 bg-border"></div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Experience</h2>
+          <div className="h-1 w-24 bg-border"></div>
         </motion.div>
 
         <div className="space-y-16">

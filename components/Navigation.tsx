@@ -99,7 +99,7 @@ export const Navigation: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium uppercase tracking-widest text-secondary hover:text-primary transition-colors cursor-pointer"
+                className="text-sm font-medium uppercase tracking-widest text-secondary hover:text-brand transition-colors cursor-pointer"
               >
                 {link.label}
               </motion.a>
@@ -109,7 +109,7 @@ export const Navigation: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9, duration: 0.5 }}
               href="mailto:yugeshr16@gmail.com"
-              className="px-6 py-2 border border-border rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all duration-300"
+              className="px-6 py-2 border border-border rounded-full text-sm font-medium hover:bg-brand hover:text-white hover:border-brand transition-all duration-300"
             >
               Get in Touch
             </motion.a>
@@ -143,7 +143,7 @@ export const Navigation: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-5xl font-serif italic text-secondary hover:text-primary transition-colors"
+                  className="text-5xl font-serif italic text-secondary hover:text-brand transition-colors"
                 >
                   {link.label}
                 </motion.a>

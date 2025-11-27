@@ -43,7 +43,7 @@ export const Home: React.FC = () => {
             <About />
 
             {/* 4. Case Studies (Projects) */}
-            <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+            <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto min-h-screen flex flex-col justify-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

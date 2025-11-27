@@ -4,7 +4,7 @@ import InteractiveGrid from './InteractiveGrid';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-32 relative bg-background">
+    <section id="about" className="py-32 relative bg-background min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
 
         {/* Top Section: Bio & Portrait */}
@@ -50,14 +50,14 @@ export const About: React.FC = () => {
             <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative group">
               {/* Color Image (Reveals on hover) */}
               <img
-                src="/portfolio-2025-gemini/images/profile-color.jpg"
+                src="/images/profile-color.jpg"
                 alt="Yugesh Ralli"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"
               />
 
               {/* B&W Image (Default) */}
               <img
-                src="/portfolio-2025-gemini/images/profile-bw.jpg"
+                src="/images/profile-bw.jpg"
                 alt="Yugesh Ralli"
                 className="w-full h-full object-cover"
               />

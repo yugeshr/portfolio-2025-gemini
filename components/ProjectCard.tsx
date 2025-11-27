@@ -18,12 +18,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="group mb-40 last:mb-0"
         >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
                 {/* Visual */}
-                <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className="relative group/image">
+                <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'} h-full`}>
+                    <div className="relative group/image h-full">
                         <div className="absolute -inset-1 bg-gradient-to-r from-zinc-700 to-zinc-800 rounded-2xl blur opacity-20 group-hover/image:opacity-40 transition duration-1000"></div>
-                        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-surface aspect-[16/10]">
+                        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-surface h-full">
                             <motion.img
                                 whileHover={{ scale: 1.03 }}
                                 transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}

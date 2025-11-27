@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/portfolio-2025-gemini/',
+    base: mode === 'production' ? '/portfolio-2025-gemini/' : '/',
     server: {
       port: 3000,
       host: '0.0.0.0',

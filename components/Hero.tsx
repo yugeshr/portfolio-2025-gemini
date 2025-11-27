@@ -5,7 +5,7 @@ import { ArrowDown, Download, ArrowRight } from 'lucide-react';
 export const Hero: React.FC = () => {
   return (
     <>
-      <section className="relative min-h-[90vh] flex flex-col justify-center pt-20 pb-12 overflow-hidden w-full">
+      <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-12 overflow-hidden w-full">
         {/* Background Glow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="block text-secondary/80 font-serif italic mt-2"
+                className="block text-brand font-serif italic mt-2"
               >
                 & Scalable Systems.
               </motion.span>
