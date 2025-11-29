@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="group mb-40 last:mb-0"
+            className="group mb-20 md:mb-40 last:mb-0"
         >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
                 {/* Visual */}
@@ -63,7 +63,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                                 ))}
                             </motion.div>
 
-                            <h3 className="text-4xl md:text-5xl font-bold text-primary leading-tight mb-4">
+                            <h3 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-4">
                                 {project.title}
                             </h3>
 

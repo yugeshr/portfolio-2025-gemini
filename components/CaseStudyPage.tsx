@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export const CaseStudyPage: React.FC = () => {
@@ -24,8 +24,8 @@ export const CaseStudyPage: React.FC = () => {
     const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
 
     return (
-        <article className="min-h-screen bg-background pt-32 pb-20">
-            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+        <article className="min-h-screen bg-background pt-24 md:pt-32 pb-12 md:pb-20">
+            <div className="container mx-auto px-6 md:px-12 max-w-7xl">
 
                 {/* Back Link */}
                 <Link
@@ -49,10 +49,10 @@ export const CaseStudyPage: React.FC = () => {
                             </span>
                         ))}
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-bold text-primary leading-tight">
+                    <h1 className="text-4xl md:text-7xl font-bold text-primary leading-tight">
                         {project.title}
                     </h1>
-                    <p className="text-xl md:text-2xl text-secondary font-light max-w-3xl leading-relaxed">
+                    <p className="text-lg md:text-2xl text-secondary font-light leading-relaxed whitespace-pre-line">
                         {project.overview || project.description}
                     </p>
                 </motion.div>
@@ -228,81 +228,72 @@ export const CaseStudyPage: React.FC = () => {
 };
 
 const GoalsSection: React.FC<{ goals: NonNullable<typeof PROJECTS[0]['goals']> }> = ({ goals }) => {
-    const [activeGoalIndex, setActiveGoalIndex] = React.useState(0);
-
     return (
-        <div className="mb-32">
-            <div className="mb-12">
-                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">The Goal</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Scalable Mentorship System</h2>
-                <p className="text-xl text-zinc-400 max-w-2xl font-light">To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.</p>
-            </div>
+        <section className="py-16 md:py-32">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+                {/* Sticky Header (Left Column) */}
+                <div className="lg:col-span-5">
+                    <div className="lg:sticky lg:top-32">
+                        <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">The Goal</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">Scalable Mentorship System</h2>
+                        <p className="text-xl text-zinc-400 font-light leading-relaxed mb-8">
+                            To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.
+                        </p>
+                        <div className="hidden lg:block w-12 h-1 bg-primary/20 rounded-full"></div>
+                    </div>
+                </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                {/* Goals List */}
-                <div className="space-y-4">
+                {/* Scrollable Cards (Right Column) */}
+                <div className="lg:col-span-7 space-y-12">
                     {goals.map((goal, index) => {
-                        // Handle both string and object formats for backward compatibility
+                        // Handle both string and object formats
                         const title = typeof goal === 'string' ? goal.split(':')[0] : goal.title;
                         const description = typeof goal === 'string' ? goal.split(':')[1] : goal.description;
-                        const isActive = index === activeGoalIndex;
+                        const imageUrl = typeof goal !== 'string' ? goal.imageUrl : undefined;
 
                         return (
-                            <div
+                            <motion.div
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
                                 key={index}
-                                onClick={() => setActiveGoalIndex(index)}
-                                className={`group/goal p-6 rounded-xl border transition-all cursor-pointer ${isActive
-                                    ? 'border-primary/50 bg-primary/5'
-                                    : 'border-white/5 hover:border-white/10 hover:bg-white/[0.02]'
-                                    }`}
+                                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-surface"
                             >
-                                <div className="flex gap-4">
-                                    <div className={`mt-1 shrink-0 transition-colors ${isActive ? 'text-primary' : 'text-zinc-500 group-hover/goal:text-primary'}`}>
-                                        <CheckCircle2 size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className={`text-xl font-bold mb-2 transition-colors ${isActive ? 'text-white' : 'text-zinc-300 group-hover/goal:text-white'}`}>
-                                            {title}
-                                        </h3>
-                                        {description && (
-                                            <p className="text-zinc-400 leading-relaxed">{description}</p>
-                                        )}
+                                {/* Image Container */}
+                                <div className="aspect-[4/3] w-full overflow-hidden border-b border-white/5 p-4 md:p-8">
+                                    {imageUrl ? (
+                                        <img
+                                            src={imageUrl}
+                                            alt={title}
+                                            className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    ) : (
+                                        <div className="h-full w-full bg-zinc-900 flex items-center justify-center">
+                                            <CheckCircle2 size={64} className="text-zinc-800" />
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Content Section (Below Image) */}
+                                <div className="p-8">
+                                    <div className="flex items-start gap-6">
+                                        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary backdrop-blur-sm border border-primary/20">
+                                            <span className="text-sm font-bold">{index + 1}</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+                                            <p className="text-zinc-300 leading-relaxed font-light">
+                                                {description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>
-
-                {/* Goal Image Preview (Sticky) */}
-                <div className="hidden lg:block sticky top-32">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface aspect-[4/3] relative">
-                        {goals.map((goal, index) => (
-                            typeof goal !== 'string' && goal.imageUrl && (
-                                <div
-                                    key={index}
-                                    className={`absolute inset-0 transition-opacity duration-500 ${index === activeGoalIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-                                >
-                                    <img
-                                        src={goal.imageUrl}
-                                        alt={goal.title}
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
-                                        <p className="text-white font-medium text-lg">{goal.title}</p>
-                                    </div>
-                                </div>
-                            )
-                        ))}
-                        {/* Fallback if no images or string format */}
-                        {goals.every(g => typeof g === 'string' || !g.imageUrl) && (
-                            <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-zinc-700">
-                                <span className="text-sm uppercase tracking-widest">Select a goal</span>
-                            </div>
-                        )}
-                    </div>
-                </div>
             </div>
-        </div>
+        </section>
     );
 };

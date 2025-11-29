@@ -37,36 +37,38 @@ export const PERSONAL_GALLERY = [
   { id: 6, url: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=800&auto=format&fit=crop', alt: 'Adventure' },
 ];
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: Array<Project> = [
   {
     id: '1',
-    title: 'Scalable Mentorship for Auzmor Learn',
+    title: 'Scalable Mentorship for \nAuzmor Learn',
     role: 'Senior Product Designer',
     timeline: '6 Months',
     tags: ['UX Strategy', 'Enterprise SaaS', 'Zero-to-One'],
     description: 'Expanding the LMS ecosystem to support scalable, goal-driven relationships between employees.',
-    overview: 'I led the end-to-end design of a structured Mentorship System in Auzmor Learn to enable scalable, goal-driven relationships between mentors and mentees. Initiated in collaboration with Amazon, this feature supported training, feedback, and growth tracking across organizations — with custom workflows for admins, mentors, and learners.',
+    overview: `Many enterprise teams struggled to run structured mentorship programs with clear goals. Information was scattered across tools, expectations were unclear, and progress was almost impossible to track in one place.
+
+I designed a scalable Mentorship System inside Auzmor Learn that brought everything together in a single flow. The solution introduced clear goals for every mentorship, consistent training paths, built-in feedback, and transparent progress tracking. It also provided dedicated experiences for admins, mentors, and learners to keep the entire program organized and easy to manage.`,
     challenge: 'LMS lacked a structured framework for scalable mentorship, resulting in informal, untracked, and ineffective coaching relationships between employees.',
     goals: [
       {
         title: 'Define Goals & Milestones',
         description: 'Admins can set up structured programs with clear objectives, timelines, and success criteria to ensure mentorship is purposeful.',
-        imageUrl: getAssetPath('images/gallery/photo-1.png')
+        imageUrl: getAssetPath('images/gallery/goal-2.png')
       },
       {
         title: 'Pair Mentors and Mentees',
         description: 'Flexible matching algorithms allow admins to assign mentors or let employees self-select based on skills and career aspirations.',
-        imageUrl: getAssetPath('images/gallery/photo-2.jpg')
+        imageUrl: getAssetPath('images/gallery/goal-1.png')
       },
       {
         title: 'Enable Content Sharing, Meeting Notes & Feedback',
         description: 'A dedicated workspace for mentors and mentees to share resources, track meeting outcomes, and provide continuous feedback.',
-        imageUrl: getAssetPath('images/gallery/photo-3.jpg')
+        imageUrl: getAssetPath('images/gallery/goal-3.png')
       },
       {
         title: 'Give Admins Full Visibility',
         description: 'Comprehensive dashboards provide real-time insights into program health, engagement levels, and skill development progress.',
-        imageUrl: getAssetPath('images/gallery/photo-4.jpg')
+        imageUrl: getAssetPath('images/gallery/goal-4.png')
       }
     ],
     galleryImages: [
