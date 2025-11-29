@@ -67,25 +67,18 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       },
       {
         title: 'Give Admins Full Visibility',
-        description: 'Comprehensive dashboards provide real-time insights into program health, engagement levels, and skill development progress.',
+        description: 'Admins could easily manage thousands of mentorship connections.',
         imageUrl: getAssetPath('images/gallery/goal-4.png')
       }
     ],
+    imageUrl: getAssetPath('images/auzmor-mentorship-hero.png'),
+    outcome: 'The Mentorship Platform was successfully rolled out to enterprise clients, becoming a core part of the LMS ecosystem. It facilitated structured goal setting and improved mentor-mentee engagement.',
     galleryImages: [
-      { url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000', caption: 'Mentorship Dashboard Overview' },
-      { url: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=2000', caption: 'Goal Setting & Tracking Interface' },
-      { url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000', caption: 'Mentor-Mentee Matching Flow' },
-      { url: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=2000', caption: 'Feedback & Session Notes' }
+      { url: getAssetPath('images/gallery/program-creation.png'), caption: 'Admins can easily create and structure mentorship programs with defined goals and timelines.' },
+      { url: getAssetPath('images/gallery/mentee-profile.png'), caption: 'Mentors get a comprehensive view of their mentees, including their skills, goals, and progress.' },
+      { url: getAssetPath('images/gallery/milestone-details.png'), caption: 'Clear milestones help track progress and ensure the mentorship stays on course.' },
+      { url: getAssetPath('images/gallery/mentorship-analytics.png'), caption: 'Detailed analytics provide insights into program engagement and effectiveness.' }
     ],
-    solution: 'Led the end-to-end design of a comprehensive Mentorship System, introducing flexible pairing models (admin-assigned and self-volunteered), a structured "Goal & Milestone" framework, and integrated feedback loops.',
-    outcome: 'Successfully rolled out to enterprise clients as a core LMS feature with high adoption rates. Admins reported significantly reduced setup time for launching new mentorship programs.',
-    outcomeDetails: [
-      { title: 'Increased Visibility', description: 'Stakeholders could now view skill progress, feedback summaries, and meeting engagement.' },
-      { title: 'Structured Growth', description: 'Employees had clear paths for development with tracked milestones.' },
-      { title: 'Scalable Pairing', description: 'Admins could easily manage thousands of mentorship connections.' },
-      { title: 'High Adoption', description: 'Rapid uptake by enterprise clients including Amazon.' }
-    ],
-    imageUrl: getAssetPath('images/auzmor-mentorship.png'),
   },
   {
     id: '2',

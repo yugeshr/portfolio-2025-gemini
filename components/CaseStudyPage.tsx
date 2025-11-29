@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Lightbox } from './Lightbox';
 
 export const CaseStudyPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const project = PROJECTS.find(p => p.id === id);
+    const [lightboxState, setLightboxState] = useState<{ src: string | null; caption?: string }>({ src: null });
+
+    const openLightbox = (src: string, caption?: string) => {
+        setLightboxState({ src, caption });
+    };
+
+    const closeLightbox = () => {
+        setLightboxState({ src: null });
+    };
 
     if (!project) {
         return (
@@ -92,7 +102,8 @@ export const CaseStudyPage: React.FC = () => {
                     <img
                         src={project.imageUrl}
                         alt={project.title}
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto object-cover cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                        onClick={() => openLightbox(project.imageUrl, project.title)}
                     />
                 </motion.div>
 
@@ -114,18 +125,27 @@ export const CaseStudyPage: React.FC = () => {
                                     <p className="text-sm text-zinc-400 leading-relaxed">{point.description}</p>
                                 </div>
                             ))}
-                            <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The Challenge</h3>
                         </div>
-                        <div className="lg:col-span-8">
-                            <p className="text-xl text-zinc-300 leading-relaxed font-light mb-8">
-                                {project.challenge}
-                            </p>
+                        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                            <div className="lg:col-span-4">
+                                <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The Challenge</h3>
+                            </div>
+                            <div className="lg:col-span-8">
+                                <p className="text-xl text-zinc-300 leading-relaxed font-light">
+                                    {project.challenge}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 )}
 
                 {/* --- GOALS SECTION --- */}
-                {project.goals && <GoalsSection goals={project.goals} />}
+                {project.goals && (
+                    <GoalsSection
+                        goals={project.goals}
+                        onImageClick={(img, title, desc) => openLightbox(img, `${title}: ${desc}`)}
+                    />
+                )}
 
                 {/* --- PROCESS / JOURNEY MAP SECTION --- */}
                 {project.processSteps && (
@@ -139,7 +159,12 @@ export const CaseStudyPage: React.FC = () => {
                                 </div>
                                 {step.imageUrl && (
                                     <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface">
-                                        <img src={step.imageUrl} alt={step.title} className="w-full h-auto" />
+                                        <img
+                                            src={step.imageUrl}
+                                            alt={step.title}
+                                            className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                                            onClick={() => openLightbox(step.imageUrl!, step.title)}
+                                        />
                                     </div>
                                 )}
                             </div>
@@ -161,7 +186,12 @@ export const CaseStudyPage: React.FC = () => {
                             {project.galleryImages.map((img, index) => (
                                 <div key={index} className="group">
                                     <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface mb-6 shadow-2xl shadow-black/50">
-                                        <img src={img.url} alt={img.caption || `Screen ${index + 1}`} className="w-full h-auto" />
+                                        <img
+                                            src={img.url}
+                                            alt={img.caption || `Screen ${index + 1}`}
+                                            className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                                            onClick={() => openLightbox(img.url, img.caption)}
+                                        />
                                     </div>
                                     {img.caption && (
                                         <div className="text-center max-w-2xl mx-auto">
@@ -223,11 +253,20 @@ export const CaseStudyPage: React.FC = () => {
                 </div>
 
             </div>
-        </article>
+
+            <Lightbox
+                src={lightboxState.src}
+                caption={lightboxState.caption}
+                onClose={closeLightbox}
+            />
+        </article >
     );
 };
 
-const GoalsSection: React.FC<{ goals: NonNullable<typeof PROJECTS[0]['goals']> }> = ({ goals }) => {
+const GoalsSection: React.FC<{
+    goals: NonNullable<typeof PROJECTS[0]['goals']>,
+    onImageClick: (src: string, title: string, desc: string) => void
+}> = ({ goals, onImageClick }) => {
     return (
         <section className="py-16 md:py-32">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
@@ -260,20 +299,16 @@ const GoalsSection: React.FC<{ goals: NonNullable<typeof PROJECTS[0]['goals']> }
                                 key={index}
                                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-surface"
                             >
-                                {/* Image Container */}
-                                <div className="aspect-[4/3] w-full overflow-hidden border-b border-white/5 p-4 md:p-8">
-                                    {imageUrl ? (
+                                {imageUrl && (
+                                    <div className="aspect-[4/3] w-full overflow-hidden border-b border-white/5 p-4 md:p-8">
                                         <img
                                             src={imageUrl}
                                             alt={title}
-                                            className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                            className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+                                            onClick={() => onImageClick(imageUrl, title, description)}
                                         />
-                                    ) : (
-                                        <div className="h-full w-full bg-zinc-900 flex items-center justify-center">
-                                            <CheckCircle2 size={64} className="text-zinc-800" />
-                                        </div>
-                                    )}
-                                </div>
+                                    </div>
+                                )}
 
                                 {/* Content Section (Below Image) */}
                                 <div className="p-8">

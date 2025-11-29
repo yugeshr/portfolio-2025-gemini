@@ -14,7 +14,7 @@ export interface Project {
   ctaText?: string;
   isGallery?: boolean; // For the Concept Exploration project
   problemPoints?: { title: string; description: string }[];
-  goals?: { title: string; description: string; imageUrl: string }[];
+  goals?: { title: string; description: string; imageUrl?: string }[];
   outcomeDetails?: { title: string; description: string }[];
   processSteps?: { title: string; description: string; imageUrl?: string }[];
   galleryImages?: { url: string; caption?: string }[];
