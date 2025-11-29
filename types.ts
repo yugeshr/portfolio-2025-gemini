@@ -11,10 +11,13 @@ export interface Project {
   outcome?: string;
   imageUrl: string;
   link?: string;
+  ctaText?: string;
   isGallery?: boolean; // For the Concept Exploration project
   problemPoints?: { title: string; description: string }[];
-  goals?: string[];
+  goals?: { title: string; description: string; imageUrl: string }[];
   outcomeDetails?: { title: string; description: string }[];
+  processSteps?: { title: string; description: string; imageUrl?: string }[];
+  galleryImages?: { url: string; caption?: string }[];
 }
 
 export interface ExperienceItem {

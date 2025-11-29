@@ -41,14 +41,49 @@ export const PROJECTS: Project[] = [
   {
     id: '1',
     title: 'Scalable Mentorship for Auzmor Learn',
-    role: 'Product Designer',
+    role: 'Senior Product Designer',
     timeline: '6 Months',
     tags: ['UX Strategy', 'Enterprise SaaS', 'Zero-to-One'],
     description: 'Expanding the LMS ecosystem to support scalable, goal-driven relationships between employees.',
+    overview: 'I led the end-to-end design of a structured Mentorship System in Auzmor Learn to enable scalable, goal-driven relationships between mentors and mentees. Initiated in collaboration with Amazon, this feature supported training, feedback, and growth tracking across organizations — with custom workflows for admins, mentors, and learners.',
     challenge: 'LMS lacked a structured framework for scalable mentorship, resulting in informal, untracked, and ineffective coaching relationships between employees.',
-    solution: 'Led the end-to-end design of a comprehensive Mentorship System, introducing flexible pairing models (admin-assigned and self-service), a structured "Goal & Milestone" framework, and integrated feedback loops.',
+    goals: [
+      {
+        title: 'Define Goals & Milestones',
+        description: 'Admins can set up structured programs with clear objectives, timelines, and success criteria to ensure mentorship is purposeful.',
+        imageUrl: getAssetPath('images/gallery/photo-1.png')
+      },
+      {
+        title: 'Pair Mentors and Mentees',
+        description: 'Flexible matching algorithms allow admins to assign mentors or let employees self-select based on skills and career aspirations.',
+        imageUrl: getAssetPath('images/gallery/photo-2.jpg')
+      },
+      {
+        title: 'Enable Content Sharing, Meeting Notes & Feedback',
+        description: 'A dedicated workspace for mentors and mentees to share resources, track meeting outcomes, and provide continuous feedback.',
+        imageUrl: getAssetPath('images/gallery/photo-3.jpg')
+      },
+      {
+        title: 'Give Admins Full Visibility',
+        description: 'Comprehensive dashboards provide real-time insights into program health, engagement levels, and skill development progress.',
+        imageUrl: getAssetPath('images/gallery/photo-4.jpg')
+      }
+    ],
+    galleryImages: [
+      { url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000', caption: 'Mentorship Dashboard Overview' },
+      { url: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=2000', caption: 'Goal Setting & Tracking Interface' },
+      { url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000', caption: 'Mentor-Mentee Matching Flow' },
+      { url: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=2000', caption: 'Feedback & Session Notes' }
+    ],
+    solution: 'Led the end-to-end design of a comprehensive Mentorship System, introducing flexible pairing models (admin-assigned and self-volunteered), a structured "Goal & Milestone" framework, and integrated feedback loops.',
     outcome: 'Successfully rolled out to enterprise clients as a core LMS feature with high adoption rates. Admins reported significantly reduced setup time for launching new mentorship programs.',
-    imageUrl: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=2000',
+    outcomeDetails: [
+      { title: 'Increased Visibility', description: 'Stakeholders could now view skill progress, feedback summaries, and meeting engagement.' },
+      { title: 'Structured Growth', description: 'Employees had clear paths for development with tracked milestones.' },
+      { title: 'Scalable Pairing', description: 'Admins could easily manage thousands of mentorship connections.' },
+      { title: 'High Adoption', description: 'Rapid uptake by enterprise clients including Amazon.' }
+    ],
+    imageUrl: getAssetPath('images/auzmor-mentorship.png'),
   },
   {
     id: '2',
@@ -60,15 +95,17 @@ export const PROJECTS: Project[] = [
     challenge: 'Ramco\'s B2B dashboards were unstructured resulting in a steep learning curve due to unclear hierarchy and complex dependencies.',
     solution: 'Crafted a modern visual experience using an Atomic Design System and 8-point grid for consistency and scanability.',
     outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language that the dev team could reuse for future modules.',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000',
+    imageUrl: getAssetPath('images/ramco-redesign-v2.png'),
   },
   {
     id: '3',
     title: 'UI & Concept Exploration',
     role: 'Visual Designer',
-    tags: ['Spatial UI', 'Prototyping', 'Mobile App'],
-    description: 'A collection of forward-thinking concepts exploring the future of interfaces, from Vision Pro spatial UI to minimal utility apps.',
+    tags: ['Exploration', 'Ideas', 'Concepts'],
+    description: 'A collection of forward-thinking concepts exploring the design space of interfaces.',
     imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=2000',
+    link: 'https://dribbble.com/yugeshralli',
+    ctaText: 'View Other Designs',
     isGallery: true
   }
 ];

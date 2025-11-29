@@ -94,10 +94,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                         </div>
 
                         <div className="pt-4">
-                            <Link to={`/work/${project.id}`} className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary border-b border-transparent hover:border-primary pb-1 transition-all group/btn">
-                                View Case Study
-                                <ArrowUpRight size={16} className="transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
-                            </Link>
+                            {project.link ? (
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary border-b border-transparent hover:border-primary pb-1 transition-all group/btn"
+                                >
+                                    {project.ctaText || 'View Case Study'}
+                                    <ArrowUpRight size={16} className="transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
+                                </a>
+                            ) : (
+                                <Link to={`/work/${project.id}`} className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary border-b border-transparent hover:border-primary pb-1 transition-all group/btn">
+                                    {project.ctaText || 'View Case Study'}
+                                    <ArrowUpRight size={16} className="transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

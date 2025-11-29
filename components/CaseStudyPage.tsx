@@ -114,50 +114,64 @@ export const CaseStudyPage: React.FC = () => {
                                     <p className="text-sm text-zinc-400 leading-relaxed">{point.description}</p>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* --- GOALS SECTION (Scalable Mentorship System) --- */}
-                {project.goals && (
-                    <div className="mb-32">
-                        <div className="mb-12">
-                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">The Goal</span>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Scalable Mentorship System</h2>
-                            <p className="text-xl text-zinc-400 max-w-2xl font-light">To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.</p>
-                        </div>
-
-                        <div className="space-y-6">
-                            {project.goals.map((goal, index) => {
-                                const [title, ...descParts] = goal.split(':');
-                                return (
-                                    <div key={index} className="flex gap-4 p-6 border-b border-white/5 last:border-0">
-                                        <div className="mt-1 shrink-0 text-white">
-                                            <CheckCircle2 size={24} />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-                                            {descParts.length > 0 && (
-                                                <p className="text-zinc-400 leading-relaxed">{descParts.join(':')}</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                )}
-
-                {/* --- Generic Content Fallback --- */}
-                {!project.problemPoints && project.challenge && (
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
-                        <div className="lg:col-span-4">
                             <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The Challenge</h3>
                         </div>
                         <div className="lg:col-span-8">
                             <p className="text-xl text-zinc-300 leading-relaxed font-light mb-8">
                                 {project.challenge}
                             </p>
+                        </div>
+                    </div>
+                )}
+
+                {/* --- GOALS SECTION --- */}
+                {project.goals && <GoalsSection goals={project.goals} />}
+
+                {/* --- PROCESS / JOURNEY MAP SECTION --- */}
+                {project.processSteps && (
+                    <div className="mb-32">
+                        {project.processSteps.map((step, index) => (
+                            <div key={index} className="mb-20 last:mb-0">
+                                <div className="text-center mb-12">
+                                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Process</span>
+                                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{step.title}</h2>
+                                    <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">{step.description}</p>
+                                </div>
+                                {step.imageUrl && (
+                                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface">
+                                        <img src={step.imageUrl} alt={step.title} className="w-full h-auto" />
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {/* --- FINAL UI SCREENS (GALLERY) --- */}
+                {project.galleryImages && (
+                    <div className="mb-32">
+                        <div className="text-center mb-16">
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Visuals</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">From Figma to Code: Final UI Screens</h2>
+                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
+                                These screens showcase how the mentorship feature was designed to balance structure and flexibility—allowing admins, mentors, and mentees to engage meaningfully across goals, milestones, and feedback touchpoints.
+                            </p>
+                        </div>
+                        <div className="space-y-20">
+                            {project.galleryImages.map((img, index) => (
+                                <div key={index} className="group">
+                                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface mb-6 shadow-2xl shadow-black/50">
+                                        <img src={img.url} alt={img.caption || `Screen ${index + 1}`} className="w-full h-auto" />
+                                    </div>
+                                    {img.caption && (
+                                        <div className="text-center max-w-2xl mx-auto">
+                                            <p className="text-zinc-400 text-sm md:text-base font-light border-l-2 border-primary/50 pl-4 py-1 inline-block text-left">
+                                                {img.caption}
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 )}
@@ -210,5 +224,85 @@ export const CaseStudyPage: React.FC = () => {
 
             </div>
         </article>
+    );
+};
+
+const GoalsSection: React.FC<{ goals: NonNullable<typeof PROJECTS[0]['goals']> }> = ({ goals }) => {
+    const [activeGoalIndex, setActiveGoalIndex] = React.useState(0);
+
+    return (
+        <div className="mb-32">
+            <div className="mb-12">
+                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">The Goal</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Scalable Mentorship System</h2>
+                <p className="text-xl text-zinc-400 max-w-2xl font-light">To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                {/* Goals List */}
+                <div className="space-y-4">
+                    {goals.map((goal, index) => {
+                        // Handle both string and object formats for backward compatibility
+                        const title = typeof goal === 'string' ? goal.split(':')[0] : goal.title;
+                        const description = typeof goal === 'string' ? goal.split(':')[1] : goal.description;
+                        const isActive = index === activeGoalIndex;
+
+                        return (
+                            <div
+                                key={index}
+                                onClick={() => setActiveGoalIndex(index)}
+                                className={`group/goal p-6 rounded-xl border transition-all cursor-pointer ${isActive
+                                    ? 'border-primary/50 bg-primary/5'
+                                    : 'border-white/5 hover:border-white/10 hover:bg-white/[0.02]'
+                                    }`}
+                            >
+                                <div className="flex gap-4">
+                                    <div className={`mt-1 shrink-0 transition-colors ${isActive ? 'text-primary' : 'text-zinc-500 group-hover/goal:text-primary'}`}>
+                                        <CheckCircle2 size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className={`text-xl font-bold mb-2 transition-colors ${isActive ? 'text-white' : 'text-zinc-300 group-hover/goal:text-white'}`}>
+                                            {title}
+                                        </h3>
+                                        {description && (
+                                            <p className="text-zinc-400 leading-relaxed">{description}</p>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Goal Image Preview (Sticky) */}
+                <div className="hidden lg:block sticky top-32">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface aspect-[4/3] relative">
+                        {goals.map((goal, index) => (
+                            typeof goal !== 'string' && goal.imageUrl && (
+                                <div
+                                    key={index}
+                                    className={`absolute inset-0 transition-opacity duration-500 ${index === activeGoalIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                                >
+                                    <img
+                                        src={goal.imageUrl}
+                                        alt={goal.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                                        <p className="text-white font-medium text-lg">{goal.title}</p>
+                                    </div>
+                                </div>
+                            )
+                        ))}
+                        {/* Fallback if no images or string format */}
+                        {goals.every(g => typeof g === 'string' || !g.imageUrl) && (
+                            <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-zinc-700">
+                                <span className="text-sm uppercase tracking-widest">Select a goal</span>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
