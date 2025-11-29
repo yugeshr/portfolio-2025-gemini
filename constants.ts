@@ -72,6 +72,7 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       }
     ],
     imageUrl: getAssetPath('images/auzmor-mentorship-hero.png'),
+    thumbnailUrl: getAssetPath('images/auzmor-mentorship-thumbnail.png'),
     outcome: 'The Mentorship Platform was successfully rolled out to enterprise clients, becoming a core part of the LMS ecosystem. It facilitated structured goal setting and improved mentor-mentee engagement.',
     galleryImages: [
       { url: getAssetPath('images/gallery/program-creation.png'), caption: 'Admins can easily create and structure mentorship programs with defined goals and timelines.' },
@@ -85,12 +86,46 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     title: 'Ramco Systems Redesign with Design System',
     role: 'UI Designer',
     timeline: '6 Months',
-    tags: ['Legacy Modernization', 'Design Systems', 'Visual Design'],
+    tags: ['Design Systems', 'Prototyping', 'Legacy Modernization'],
     description: 'Transforming a 13-year-old legacy platform into a modern, approachable interface without losing data density capabilities.',
-    challenge: 'Ramco\'s B2B dashboards were unstructured resulting in a steep learning curve due to unclear hierarchy and complex dependencies.',
-    solution: 'Crafted a modern visual experience using an Atomic Design System and 8-point grid for consistency and scanability.',
-    outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language that the dev team could reuse for future modules.',
+    overview: 'The platform being a legacy application serving them for more than thirteen years and the application is built with the help of automation code. The application involves high data entry and form field structure with few call to actions to guide the user.',
+    challenge: 'The application is purely built on automation code depending on the mental model of the user with high learning curve. There was no clear information hierarchy or visual structure being used the application. The users wanted a more modern way of information representation with a clean interface.',
+    solution: 'We choose atomic & molecular design systems as they act as an independent lego blocks which can be used and also provides us full control over the visual treatment of the platform we are building.',
+    problemPoints: [
+      { title: 'High Learning Curve', description: 'The application is purely built on automation code depending on the mental model of the user.' },
+      { title: 'No Visual Hierarchy', description: 'There was no clear information hierarchy or visual structure being used in the application.' },
+      { title: 'Familiar Tools', description: 'Users were accustomed to enterprise tools like MS Excel, MS Teams, and MS Outlook — all of which rely heavily on manual data entry.' }
+    ],
+    processSteps: [
+      {
+        title: 'Foundation: Grid & Spacing',
+        description: 'We followed a free-flowing 8-point grid system which provides us the freedom to align elements adjacent to each other. We used a Twelve column grid structure similar to Bootstrap with sixteen pixels gutter.',
+        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Grid+System'
+      },
+      {
+        title: 'Typography & Color',
+        description: 'We chose an open-source typeface for a premium look. By using Modular Scale, we structured heading tags. A total of 48 different colors were introduced for specific purposes.',
+        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Typography+%26+Color'
+      },
+      {
+        title: 'Atomic Components',
+        description: 'A layout consists of three main components that allow users to recognise any design. Setting up layout in the first step helps us in creating wireframes for respective products.',
+        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Atomic+Components'
+      },
+      {
+        title: 'Molecular Components',
+        description: 'Molecular components are created with several combinations of atomic components. Buttons follow WCAG guidelines for accessibility. Textboxes use an 8-point grid for uniform structure.',
+        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Molecular+Components'
+      }
+    ],
+    outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language. I got a clear idea how a design system is very important and an integral part of any product and how it could impact the scalability and visual design of the platform in the future.',
     imageUrl: getAssetPath('images/ramco-redesign-v2.png'),
+    galleryImages: [
+      { url: getAssetPath('images/ramco-redesign.png'), caption: 'Legacy Interface vs New Direction' },
+      { url: getAssetPath('images/ramco-redesign-v2.png'), caption: 'Modernized Dashboard Interface' },
+      { url: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Component+Library', caption: 'Comprehensive Component Library' },
+      { url: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Design+Guidelines', caption: 'Strict Design Guidelines for Consistency' }
+    ]
   },
   {
     id: '3',

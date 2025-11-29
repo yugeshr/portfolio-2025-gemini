@@ -10,6 +10,7 @@ export interface Project {
   solution?: string;
   outcome?: string;
   imageUrl: string;
+  thumbnailUrl?: string;
   link?: string;
   ctaText?: string;
   isGallery?: boolean; // For the Concept Exploration project

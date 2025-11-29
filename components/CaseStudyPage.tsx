@@ -29,9 +29,13 @@ export const CaseStudyPage: React.FC = () => {
         );
     }
 
-    // Find next project for navigation
+    // Find next project for navigation (skip gallery projects)
     const currentIndex = PROJECTS.findIndex(p => p.id === id);
-    const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
+    let nextIndex = (currentIndex + 1) % PROJECTS.length;
+    while (PROJECTS[nextIndex].isGallery) {
+        nextIndex = (nextIndex + 1) % PROJECTS.length;
+    }
+    const nextProject = PROJECTS[nextIndex];
 
     return (
         <article className="min-h-screen bg-background pt-24 md:pt-32 pb-12 md:pb-20">

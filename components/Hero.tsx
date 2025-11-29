@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
             >
               <div className="h-[1px] w-12 bg-secondary/50"></div>
               <span className="text-sm md:text-base font-medium uppercase tracking-[0.2em] text-secondary">
-                Senior Product Designer
+                Yugesh Ralli, Senior Product Designer
               </span>
             </motion.div>
 
