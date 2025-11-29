@@ -39,7 +39,7 @@ export const PERSONAL_GALLERY = [
 
 export const PROJECTS: Array<Project> = [
   {
-    id: '1',
+    id: 'scalable-mentorship-auzmor',
     title: 'Scalable Mentorship for \nAuzmor Learn',
     role: 'Senior Product Designer',
     timeline: '6 Months',
@@ -82,7 +82,7 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     ],
   },
   {
-    id: '2',
+    id: 'ramco-systems-redesign',
     title: 'Ramco Systems Redesign with Design System',
     role: 'UI Designer',
     timeline: '6 Months',
@@ -128,12 +128,12 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     ]
   },
   {
-    id: '3',
+    id: 'ui-concept-exploration',
     title: 'UI & Concept Exploration',
     role: 'Visual Designer',
     tags: ['Exploration', 'Ideas', 'Concepts'],
     description: 'A collection of forward-thinking concepts exploring the design space of interfaces.',
-    imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=2000',
+    imageUrl: getAssetPath('images/ui-concept-thumbnail.png'),
     link: 'https://dribbble.com/yugeshralli',
     ctaText: 'View Other Designs',
     isGallery: true

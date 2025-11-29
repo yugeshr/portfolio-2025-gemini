@@ -31,17 +31,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                                 alt={project.title}
                                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                             />
-
-                            {/* Overlay for Gallery */}
-                            {project.isGallery && (
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
-                                    <div className="flex gap-4 overflow-x-auto scrollbar-hide">
-                                        <span className="text-xs text-zinc-300 border border-white/20 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md">ExpressEats</span>
-                                        <span className="text-xs text-zinc-300 border border-white/20 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md">Freelancer</span>
-                                        <span className="text-xs text-zinc-300 border border-white/20 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md">iGrocery</span>
-                                    </div>
-                                </div>
-                            )}
                         </div>
                     </div>
                 </div>
@@ -63,9 +52,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                                 ))}
                             </motion.div>
 
-                            <h3 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-4">
-                                {project.title}
-                            </h3>
+                            {project.link ? (
+                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="block group/title">
+                                    <h3 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-4 group-hover/title:text-brand transition-colors">
+                                        {project.title}
+                                    </h3>
+                                </a>
+                            ) : (
+                                <Link to={`/work/${project.id}`} className="block group/title">
+                                    <h3 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-4 group-hover/title:text-brand transition-colors">
+                                        {project.title}
+                                    </h3>
+                                </Link>
+                            )}
 
                             {project.role && (
                                 <div className="flex items-center gap-3 text-secondary text-sm md:text-base font-medium mb-6">
