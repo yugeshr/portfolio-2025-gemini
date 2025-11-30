@@ -97,7 +97,13 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       { title: 'Familiar Tools', description: 'Users were accustomed to enterprise tools like MS Excel, MS Teams, and MS Outlook — all of which rely heavily on manual data entry.' }
     ],
     userResearch: {
-      imageUrl: getAssetPath('images/ramco-users-section.png')
+      title: 'Who Are The Users?',
+      description: 'Based on the initial user interviews with product owners, we identified key expectations and usage patterns that would guide our design direction:',
+      points: [
+        { title: 'Familiar Tools', description: 'Users were accustomed to enterprise tools like MS Excel, MS Teams, and MS Outlook — all of which rely heavily on manual data entry and dense interfaces.' },
+        { title: 'Pain Points', description: 'The repetitive and rigid nature of these tools made workflows feel tedious and overwhelming.' },
+        { title: 'Design Opportunity', description: 'There was a clear need for a more modern, refreshing interface — one that simplifies information input while offering a clean, user-friendly visual structure.' }
+      ]
     },
     processSteps: [
       {

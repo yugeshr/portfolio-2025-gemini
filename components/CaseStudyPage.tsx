@@ -146,13 +146,23 @@ export const CaseStudyPage: React.FC = () => {
                 {/* --- USER RESEARCH SECTION (Who Are The Users?) --- */}
                 {project.userResearch && (
                     <div className="mb-32">
-                        <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface">
-                            <img
-                                src={project.userResearch.imageUrl}
-                                alt="Who Are The Users?"
-                                className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
-                                onClick={() => openLightbox(project.userResearch!.imageUrl, "Who Are The Users? - User Research Insights")}
-                            />
+                        <div className="text-center mb-16">
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">User Research</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.userResearch.title}</h2>
+                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
+                                {project.userResearch.description}
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {project.userResearch.points.map((point, index) => (
+                                <div key={index} className="bg-surface border border-white/10 p-8 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                                    <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
+                                    <p className="text-zinc-400 leading-relaxed font-light">
+                                        {point.description}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 )}
