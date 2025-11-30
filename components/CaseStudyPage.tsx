@@ -143,6 +143,20 @@ export const CaseStudyPage: React.FC = () => {
                     </div>
                 )}
 
+                {/* --- USER RESEARCH SECTION (Who Are The Users?) --- */}
+                {project.userResearch && (
+                    <div className="mb-32">
+                        <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface">
+                            <img
+                                src={project.userResearch.imageUrl}
+                                alt="Who Are The Users?"
+                                className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                                onClick={() => openLightbox(project.userResearch!.imageUrl, "Who Are The Users? - User Research Insights")}
+                            />
+                        </div>
+                    </div>
+                )}
+
                 {/* --- GOALS SECTION --- */}
                 {project.goals && (
                     <GoalsSection

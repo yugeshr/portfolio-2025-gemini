@@ -96,6 +96,9 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       { title: 'No Visual Hierarchy', description: 'There was no clear information hierarchy or visual structure being used in the application.' },
       { title: 'Familiar Tools', description: 'Users were accustomed to enterprise tools like MS Excel, MS Teams, and MS Outlook — all of which rely heavily on manual data entry.' }
     ],
+    userResearch: {
+      imageUrl: getAssetPath('images/ramco-users-section.png')
+    },
     processSteps: [
       {
         title: 'Foundation: Grid & Spacing',

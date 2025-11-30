@@ -15,6 +15,7 @@ export interface Project {
   ctaText?: string;
   isGallery?: boolean; // For the Concept Exploration project
   problemPoints?: { title: string; description: string }[];
+  userResearch?: { imageUrl: string }; // Who Are The Users section
   goals?: { title: string; description: string; imageUrl?: string }[];
   outcomeDetails?: { title: string; description: string }[];
   processSteps?: { title: string; description: string; imageUrl?: string }[];
