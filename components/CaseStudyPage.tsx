@@ -245,7 +245,8 @@ export const CaseStudyPage: React.FC = () => {
                                     <img
                                         src={project.atomicComponents.mainImage}
                                         alt="Atomic Components Overview"
-                                        className="w-full h-auto"
+                                        className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                                        onClick={() => openLightbox(project.atomicComponents!.mainImage!, "Atomic Components Overview")}
                                     />
                                 </div>
                             )}
@@ -449,31 +450,26 @@ const GoalsSection: React.FC<{
                                 key={index}
                                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-surface"
                             >
+                                <div className="p-8 md:p-10">
+                                    <div className="mb-6 flex items-center gap-4">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                            <CheckCircle2 size={24} />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white">{title}</h3>
+                                    </div>
+                                    <p className="text-lg leading-relaxed text-zinc-400">{description}</p>
+                                </div>
                                 {imageUrl && (
-                                    <div className="aspect-[4/3] w-full overflow-hidden border-b border-white/5 p-4 md:p-8">
+                                    <div className="relative h-64 w-full overflow-hidden bg-black/20 md:h-80">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10" />
                                         <img
                                             src={imageUrl}
                                             alt={title}
-                                            className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
                                             onClick={() => onImageClick(imageUrl, title, description)}
                                         />
                                     </div>
                                 )}
-
-                                {/* Content Section (Below Image) */}
-                                <div className="p-8">
-                                    <div className="flex items-start gap-6">
-                                        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary backdrop-blur-sm border border-primary/20">
-                                            <span className="text-sm font-bold">{index + 1}</span>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-                                            <p className="text-zinc-300 leading-relaxed font-light">
-                                                {description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
                             </motion.div>
                         );
                     })}
