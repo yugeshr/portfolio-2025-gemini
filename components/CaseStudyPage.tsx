@@ -241,14 +241,20 @@ export const CaseStudyPage: React.FC = () => {
                         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
                             {/* Main Image */}
                             {project.atomicComponents.mainImage && (
-                                <div className="mb-16 rounded-2xl overflow-hidden border border-white/10 bg-surface">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6 }}
+                                    className="mb-16 rounded-2xl overflow-hidden border border-white/10 bg-surface"
+                                >
                                     <img
                                         src={project.atomicComponents.mainImage}
                                         alt="Atomic Components Overview"
                                         className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
                                         onClick={() => openLightbox(project.atomicComponents!.mainImage!, "Atomic Components Overview")}
                                     />
-                                </div>
+                                </motion.div>
                             )}
 
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{project.atomicComponents.title}</h2>
