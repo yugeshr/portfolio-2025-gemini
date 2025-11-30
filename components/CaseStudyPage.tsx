@@ -111,34 +111,14 @@ export const CaseStudyPage: React.FC = () => {
                     />
                 </motion.div>
 
-                {/* --- PROBLEM SECTION (Gaps in Experience) --- */}
-                {project.problemPoints && (
+                {/* --- PROBLEM SECTION --- */}
+                {project.challenge && (
                     <div className="mb-32">
-                        <div className="text-center mb-16">
-                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">The Problem</span>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white">Gaps in the Existing Experience</h2>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {project.problemPoints.map((point, index) => (
-                                <div key={index} className="bg-white/[0.03] border border-white/10 p-6 rounded-xl flex flex-col items-center text-center hover:bg-white/[0.05] transition-colors">
-                                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-zinc-300">
-                                        <AlertCircle size={24} />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-white mb-3">{point.title}</h3>
-                                    <p className="text-sm text-zinc-400 leading-relaxed">{point.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
-                            <div className="lg:col-span-4">
-                                <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The Challenge</h3>
-                            </div>
-                            <div className="lg:col-span-8">
-                                <p className="text-xl text-zinc-300 leading-relaxed font-light">
-                                    {project.challenge}
-                                </p>
-                            </div>
+                        <div className="flex flex-col items-center text-center border-t border-white/10 pt-16 max-w-4xl mx-auto">
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-6">The Problem</span>
+                            <p className="text-xl text-zinc-300 leading-relaxed font-light">
+                                {project.challenge}
+                            </p>
                         </div>
                     </div>
                 )}

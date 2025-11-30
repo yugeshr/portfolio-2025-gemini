@@ -91,11 +91,6 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     overview: 'The platform being a legacy application serving them for more than thirteen years and the application is built with the help of automation code. The application involves high data entry and form field structure with few call to actions to guide the user.',
     challenge: 'The application is purely built on automation code depending on the mental model of the user with high learning curve. There was no clear information hierarchy or visual structure being used the application. The users wanted a more modern way of information representation with a clean interface.',
     solution: 'We choose atomic & molecular design systems as they act as an independent lego blocks which can be used and also provides us full control over the visual treatment of the platform we are building.',
-    problemPoints: [
-      { title: 'High Learning Curve', description: 'The application is purely built on automation code depending on the mental model of the user.' },
-      { title: 'No Visual Hierarchy', description: 'There was no clear information hierarchy or visual structure being used in the application.' },
-      { title: 'Familiar Tools', description: 'Users were accustomed to enterprise tools like MS Excel, MS Teams, and MS Outlook — all of which rely heavily on manual data entry.' }
-    ],
     userResearch: {
       title: 'Who Are The Users?',
       description: 'Based on the initial user interviews with product owners, we identified key expectations and usage patterns that would guide our design direction:',
@@ -130,10 +125,13 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       description: 'A layout consists of three main components that allow users to recognise any design. Setting up layout in the first step helps us in creating wireframes for respective products.\n\nThis process helped the client to visualize their product and the outcome of how the design system would impact the visual layout.',
       tags: ['Improved balance', 'Clear visibility', 'Clean visuals'],
       images: [
-        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+1',
-        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+2',
-        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+3',
-        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+4'
+        getAssetPath('images/ramco-atomic-1.png'),
+        getAssetPath('images/ramco-atomic-2.png'),
+        getAssetPath('images/ramco-atomic-3.png'),
+        getAssetPath('images/ramco-atomic-4.png'),
+        getAssetPath('images/ramco-atomic-5.png'),
+        getAssetPath('images/ramco-atomic-6.png'),
+        getAssetPath('images/ramco-atomic-7.png')
       ],
       mainImage: getAssetPath('images/ramco-components.png')
     },
@@ -141,22 +139,29 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       {
         title: 'Foundation: Grid & Spacing',
         description: 'We followed a free-flowing 8-point grid system which provides us the freedom to align elements adjacent to each other. We used a Twelve column grid structure similar to Bootstrap with sixteen pixels gutter.',
-        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Grid+System'
       },
       {
-        title: 'Typography & Color',
-        description: 'We chose an open-source typeface for a premium look. By using Modular Scale, we structured heading tags. A total of 48 different colors were introduced for specific purposes.',
-        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Typography+%26+Color'
+        title: 'Typography',
+        description: 'We wanted to go for an open-source typeface that provides premium look and feel to the application, here information is weighed more than the aesthetic preference.\n\nBy using Modular Scale, we were able to structure the respective heading tags and other font sizes that are required based on the needs of the application.',
+        imageUrl: getAssetPath('images/ramco-typography.png')
       },
       {
-        title: 'Atomic Components',
-        description: 'A layout consists of three main components that allow users to recognise any design. Setting up layout in the first step helps us in creating wireframes for respective products.',
-        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Atomic+Components'
+        title: 'Color Palette',
+        description: 'A total of 48 different colors were introduced for specific purposes, ensuring a consistent and accessible visual language across the platform.',
+        imageUrl: getAssetPath('images/ramco-colors.png')
       },
       {
         title: 'Molecular Components',
-        description: 'Molecular components are created with several combinations of atomic components. Buttons follow WCAG guidelines for accessibility. Textboxes use an 8-point grid for uniform structure.',
-        imageUrl: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Molecular+Components'
+        description: 'Molecular components are created with several combinations of atomic components that we defined earlier. These components can also be considered atomic level based on how small it is compared to a large molecular component.'
+      },
+      {
+        title: 'Buttons',
+        description: 'A button is an action element that allows a user to decide at a crucial point of the navigation or a flow. The color contrast of the button follows WCAG guidelines for accessibility to support users with different accessibility issues.'
+      },
+      {
+        title: 'Textbox',
+        description: 'Textboxes are the most essential components when it comes to data entry and forms, the component is composed of Text Area, Title label, Underline caption, Iconography.\n\nThe spacing between the elements is measured at 8px in order to create a uniform structure with respect to free flowing eight point grid system.',
+        imageUrl: getAssetPath('images/ramco-textbox.png')
       }
     ],
     outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language. I got a clear idea how a design system is very important and an integral part of any product and how it could impact the scalability and visual design of the platform in the future.',
