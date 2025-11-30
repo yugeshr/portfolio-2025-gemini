@@ -5,6 +5,8 @@ import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { CaseStudyPage } from './components/CaseStudyPage';
 import { ScrollProgress } from './components/ScrollProgress';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -34,6 +36,8 @@ const App: React.FC = () => {
 
         <Footer />
       </div>
+      <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 };
