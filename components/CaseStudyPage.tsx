@@ -239,6 +239,17 @@ export const CaseStudyPage: React.FC = () => {
                 {project.atomicComponents && (
                     <div className="mb-32">
                         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+                            {/* Main Image */}
+                            {project.atomicComponents.mainImage && (
+                                <div className="mb-16 rounded-2xl overflow-hidden border border-white/10 bg-surface">
+                                    <img
+                                        src={project.atomicComponents.mainImage}
+                                        alt="Atomic Components Overview"
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                            )}
+
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{project.atomicComponents.title}</h2>
 
                             <div className="mb-12">
@@ -292,7 +303,7 @@ export const CaseStudyPage: React.FC = () => {
                         {project.processSteps.map((step, index) => (
                             <div key={index} className="mb-20 last:mb-0">
                                 <div className="text-center mb-12">
-                                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Process</span>
+                                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Atomic Components</span>
                                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{step.title}</h2>
                                     <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">{step.description}</p>
                                 </div>

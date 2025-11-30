@@ -134,7 +134,8 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
         'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+2',
         'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+3',
         'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+4'
-      ]
+      ],
+      mainImage: getAssetPath('images/ramco-components.png')
     },
     processSteps: [
       {

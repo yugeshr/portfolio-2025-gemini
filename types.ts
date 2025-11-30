@@ -37,6 +37,7 @@ export interface Project {
     description: string;
     tags: string[];
     images: string[];
+    mainImage?: string;
   };
   goals?: { title: string; description: string; imageUrl?: string }[];
   outcomeDetails?: { title: string; description: string }[];
