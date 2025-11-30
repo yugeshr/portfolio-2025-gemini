@@ -5,7 +5,7 @@ import { ArrowDown, Download, ArrowRight } from 'lucide-react';
 export const Hero: React.FC = () => {
   return (
     <>
-      <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-12 overflow-hidden w-full">
+      <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-6 md:pb-12 overflow-hidden w-full">
         {/* Background Glow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

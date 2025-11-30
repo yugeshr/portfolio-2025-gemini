@@ -26,7 +26,7 @@ const ClientLogo = ({ name, logo }: { name: string; logo?: string }) => {
 
 export const Clients: React.FC = () => {
   return (
-    <section className="py-12 border-b border-white/5 bg-background relative z-20 overflow-hidden">
+    <section className="py-6 md:py-12 border-b border-white/5 bg-background relative z-20 overflow-hidden">
       <div className="flex animate-scroll hover:[animation-play-state:paused]">
         {/* First set of logos */}
         <div className="flex items-center gap-16 md:gap-40 min-w-full justify-around px-8 shrink-0">

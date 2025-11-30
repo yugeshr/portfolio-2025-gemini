@@ -44,7 +44,7 @@ const YearCounter: React.FC<{ period: string }> = ({ period }) => {
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 md:py-32 bg-background">
+    <section id="experience" className="py-16 md:py-32 bg-background">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

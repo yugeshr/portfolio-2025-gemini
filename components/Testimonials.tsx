@@ -20,7 +20,7 @@ export const Testimonials: React.FC = () => {
     }, [controls]);
 
     return (
-        <section className="py-32 relative overflow-hidden">
+        <section className="py-16 md:py-32 relative overflow-hidden">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-zinc-900/50 blur-[120px] rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-6 md:px-12 max-w-7xl mb-16">

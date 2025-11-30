@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-background text-primary pt-32 pb-12 border-t border-white/5">
+    <footer id="contact" className="bg-background text-primary pt-16 md:pt-32 pb-12 border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl flex flex-col justify-between min-h-[60vh]">
         <div>
           <motion.h2
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           </a>
           <div className="flex flex-col md:text-right space-y-1">
             <span className="text-zinc-600 text-xs uppercase tracking-widest">© {new Date().getFullYear()} Yugesh Ralli. All Rights Reserved.</span>
-            <span className="text-zinc-600 text-xs">Designed & Developed with React & Tailwind.</span>
+            <span className="text-zinc-600 text-xs">Vibe coded using Google Antigravity.</span>
           </div>
         </div>
       </div>

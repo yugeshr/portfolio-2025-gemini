@@ -4,7 +4,7 @@ import InteractiveGrid from './InteractiveGrid';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-32 relative bg-background min-h-screen flex flex-col justify-center">
+    <section id="about" className="py-16 md:py-32 relative bg-background min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
 
         {/* Top Section: Bio & Portrait */}
