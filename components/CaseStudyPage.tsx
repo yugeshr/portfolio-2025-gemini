@@ -436,6 +436,16 @@ const GoalsSection: React.FC<{
                                 key={index}
                                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-surface"
                             >
+                                {imageUrl && (
+                                    <div className="relative h-64 w-full overflow-hidden bg-black/20 md:h-80">
+                                        <img
+                                            src={imageUrl}
+                                            alt={title}
+                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+                                            onClick={() => onImageClick(imageUrl, title, description)}
+                                        />
+                                    </div>
+                                )}
                                 <div className="p-8 md:p-10">
                                     <div className="mb-6 flex items-center gap-4">
                                         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -445,17 +455,6 @@ const GoalsSection: React.FC<{
                                     </div>
                                     <p className="text-lg leading-relaxed text-zinc-400">{description}</p>
                                 </div>
-                                {imageUrl && (
-                                    <div className="relative h-64 w-full overflow-hidden bg-black/20 md:h-80">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10" />
-                                        <img
-                                            src={imageUrl}
-                                            alt={title}
-                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
-                                            onClick={() => onImageClick(imageUrl, title, description)}
-                                        />
-                                    </div>
-                                )}
                             </motion.div>
                         );
                     })}
