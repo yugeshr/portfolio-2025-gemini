@@ -29,6 +29,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                                 transition={{ duration: 0.4 }}
                                 src={project.thumbnailUrl || project.imageUrl}
                                 alt={`${project.title} - ${project.description}`}
+                                loading="lazy"
                                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                             />
                         </div>

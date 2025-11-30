@@ -56,6 +56,7 @@ export const About: React.FC = () => {
               <img
                 src="/images/profile-color.jpg"
                 alt="Yugesh Ralli - Senior Product Designer specializing in Enterprise UX and Design Systems"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"
               />
 
@@ -63,6 +64,7 @@ export const About: React.FC = () => {
               <img
                 src="/images/profile-bw.jpg"
                 alt="Yugesh Ralli - Product Designer portrait in black and white"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
