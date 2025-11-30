@@ -115,6 +115,15 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
         { title: 'Template', icon: 'template' }
       ]
     },
+    buildingDesignSystem: {
+      title: 'BUILDING THE DESIGN SYSTEM',
+      description: 'We choose atomic & molecular design systems as they act as an independent lego blocks which can be used and also provides us full control over the visual treatment of the platform we are building.',
+      points: [
+        { title: 'Atomic', icon: 'atom' },
+        { title: 'Molecular', icon: 'molecule' }
+      ],
+      secondaryDescription: 'The first step of building a design system involves in creating a checklist of all the components that might be used in the platform.\nAn Atomic-level component is the smallest component in the design system followed my Molecular-level component which can be used to create dynamic and scalable screen designs.'
+    },
     processSteps: [
       {
         title: 'Foundation: Grid & Spacing',
@@ -139,6 +148,7 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     ],
     outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language. I got a clear idea how a design system is very important and an integral part of any product and how it could impact the scalability and visual design of the platform in the future.',
     imageUrl: getAssetPath('images/ramco-redesign-v2.png'),
+    thumbnailUrl: getAssetPath('images/ramco-thumbnail.png'),
     galleryImages: [
       { url: getAssetPath('images/ramco-redesign.png'), caption: 'Legacy Interface vs New Direction' },
       { url: getAssetPath('images/ramco-redesign-v2.png'), caption: 'Modernized Dashboard Interface' },

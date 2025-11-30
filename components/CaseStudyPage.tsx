@@ -200,6 +200,41 @@ export const CaseStudyPage: React.FC = () => {
                     </div>
                 )}
 
+                {/* --- BUILDING DESIGN SYSTEM SECTION --- */}
+                {project.buildingDesignSystem && (
+                    <div className="mb-32">
+                        <div className="text-center mb-16">
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Building The Design System</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.buildingDesignSystem.title}</h2>
+                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light whitespace-pre-line mb-12">
+                                {project.buildingDesignSystem.description}
+                            </p>
+
+                            <div className="flex flex-wrap justify-center gap-8 mb-12">
+                                {project.buildingDesignSystem.points.map((point, index) => {
+                                    const Icon = {
+                                        'atom': Atom,
+                                        'molecule': Share2,
+                                        'organism': Hexagon,
+                                        'template': LayoutTemplate
+                                    }[point.icon] || Atom;
+
+                                    return (
+                                        <div key={index} className="flex items-center gap-4 bg-surface border border-white/10 px-8 py-4 rounded-full">
+                                            <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+                                            <span className="text-xl font-bold text-white">{point.title}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light whitespace-pre-line">
+                                {project.buildingDesignSystem.secondaryDescription}
+                            </p>
+                        </div>
+                    </div>
+                )}
+
                 {/* --- GOALS SECTION --- */}
                 {project.goals && (
                     <GoalsSection
