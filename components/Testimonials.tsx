@@ -59,13 +59,24 @@ export const Testimonials: React.FC = () => {
                             key={`${t.id}-${index}`}
                             whileHover={{
                                 scale: 1.02,
+                                rotateY: 2,
+                                rotateX: -2,
                                 backgroundColor: "rgba(255, 255, 255, 0.05)",
                                 borderColor: "rgba(255, 255, 255, 0.2)"
                             }}
                             transition={{ duration: 0.3 }}
+                            style={{ transformStyle: "preserve-3d" }}
                             className="w-[85vw] md:w-[28vw] flex-shrink-0 relative p-8 border border-white/10 rounded-2xl bg-white/[0.02] backdrop-blur-sm cursor-pointer flex flex-col"
                         >
-                            <div className="text-4xl text-zinc-800 font-serif absolute top-6 left-6 select-none">"</div>
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 0.1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="text-9xl text-white/5 font-serif absolute -top-8 -left-4 select-none pointer-events-none"
+                            >
+                                "
+                            </motion.div>
                             <p className="relative z-10 text-lg text-zinc-300 font-light leading-relaxed mb-8 mt-2 line-clamp-6">
                                 {t.quote}
                             </p>

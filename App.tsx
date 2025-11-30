@@ -4,6 +4,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { CaseStudyPage } from './components/CaseStudyPage';
+import { ScrollProgress } from './components/ScrollProgress';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -20,6 +21,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ScrollProgress />
       <div className="bg-background text-primary min-h-screen">
         <Navigation />
 

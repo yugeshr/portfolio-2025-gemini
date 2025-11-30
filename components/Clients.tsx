@@ -30,23 +30,33 @@ export const Clients: React.FC = () => {
         {/* First set of logos */}
         <div className="flex items-center gap-32 md:gap-40 min-w-full justify-around px-8 shrink-0">
           {CLIENTS.map((client, index) => (
-            <div
+            <motion.div
               key={`${client.name}-1`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -8 }}
               className="group relative flex items-center justify-center"
             >
               <ClientLogo name={client.name} logo={client.logo} />
-            </div>
+            </motion.div>
           ))}
         </div>
         {/* Second set of logos for seamless scrolling */}
         <div className="flex items-center gap-32 md:gap-40 min-w-full justify-around px-8 shrink-0">
           {CLIENTS.map((client, index) => (
-            <div
+            <motion.div
               key={`${client.name}-2`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -8 }}
               className="group relative flex items-center justify-center"
             >
               <ClientLogo name={client.name} logo={client.logo} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

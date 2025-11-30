@@ -22,7 +22,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 {/* Visual */}
                 <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'} h-full`}>
                     <div className="relative group/image h-full">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-zinc-700 to-zinc-800 rounded-2xl blur opacity-20 group-hover/image:opacity-40 transition duration-1000"></div>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-zinc-700 to-zinc-800 rounded-2xl blur opacity-20 group-hover/image:opacity-60 group-hover/image:blur-xl transition duration-500"></div>
                         <div className="relative overflow-hidden rounded-xl border border-white/10 bg-surface h-full">
                             <motion.img
                                 whileHover={{ scale: 1.03 }}
@@ -46,9 +46,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                                 className="flex flex-wrap gap-2 mb-6"
                             >
                                 {project.tags.map(tag => (
-                                    <span key={tag} className="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-zinc-400 border border-white/5 px-4 py-2 rounded-full bg-white/[0.02]">
+                                    <motion.span
+                                        key={tag}
+                                        whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.1)" }}
+                                        transition={{ duration: 0.2 }}
+                                        className="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-zinc-400 border border-white/5 px-4 py-2 rounded-full bg-white/[0.02] cursor-default"
+                                    >
                                         {tag}
-                                    </span>
+                                    </motion.span>
                                 ))}
                             </motion.div>
 
@@ -104,9 +109,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                                     <ArrowUpRight size={16} className="transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
                                 </a>
                             ) : (
-                                <Link to={`/work/${project.id}`} className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary border-b border-transparent hover:border-primary pb-1 transition-all group/btn">
-                                    {project.ctaText || 'View Case Study'}
-                                    <ArrowUpRight size={16} className="transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
+                                <Link to={`/work/${project.id}`}>
+                                    <motion.div
+                                        whileTap={{ scale: 0.95 }}
+                                        transition={{ type: "spring", stiffness: 400 }}
+                                        className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary border-b border-transparent hover:border-primary pb-1 transition-all group/btn"
+                                    >
+                                        {project.ctaText || 'View Case Study'}
+                                        <ArrowUpRight size={16} className="transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
+                                    </motion.div>
                                 </Link>
                             )}
                         </div>

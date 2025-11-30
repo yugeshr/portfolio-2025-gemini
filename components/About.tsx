@@ -41,10 +41,14 @@ export const About: React.FC = () => {
 
           {/* Portrait Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95, clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+            }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative"
           >
             <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-zinc-900 border border-white/5 relative group">

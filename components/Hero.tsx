@@ -9,8 +9,15 @@ export const Hero: React.FC = () => {
         {/* Background Glow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          animate={{
+            opacity: [0.03, 0.05, 0.03],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-[120px] pointer-events-none"
         />
 
@@ -63,26 +70,32 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-wrap gap-6 pt-8"
             >
-              <a
+              <motion.a
                 href="#work"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
                 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-zinc-200 transition-all duration-300"
               >
                 View Case Studies
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="https://drive.google.com/file/d/1favCSrwPPg1nctqWuU9piLxCgpiagkLM/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className="group flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300"
               >
                 <Download size={18} />
                 <span className="font-medium">Download Resume</span>
-              </a>
+              </motion.a>
             </motion.div>
           </div>
         </div>
