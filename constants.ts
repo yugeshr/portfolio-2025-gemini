@@ -24,7 +24,7 @@ export const CLIENTS = [
   { name: 'Indiamart', logo: getAssetPath('logos/indiamart.png') },
   { name: 'Firstpass', logo: getAssetPath('logos/firstpass.png') },
   { name: 'Colandian', logo: getAssetPath('logos/colandian.png') },
-  { name: 'Duoveo', logo: getAssetPath('logos/duoveo.png') },
+
 ];
 
 export const PERSONAL_GALLERY = [
