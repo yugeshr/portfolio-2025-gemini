@@ -49,7 +49,7 @@ export const PROJECTS: Array<Project> = [
 
 I designed a scalable Mentorship System inside Auzmor Learn that brought everything together in a single flow. The solution introduced clear goals for every mentorship, consistent training paths, built-in feedback, and transparent progress tracking. It also provided dedicated experiences for admins, mentors, and learners to keep the entire program organized and easy to manage.`,
     challenge: 'LMS lacked a structured framework for scalable mentorship, resulting in informal, untracked, and ineffective coaching relationships between employees.',
-    solution: 'I designed a scalable Mentorship System inside Auzmor Learn that brought everything together in a single flow. The solution introduced clear goals for every mentorship, consistent training paths, built-in feedback, and transparent progress tracking. It also provided dedicated experiences for admins, mentors, and learners to keep the entire program organized and easy to manage.',
+    solution: 'The solution introduced clear goals for every mentorship, consistent training paths, built-in feedback, and transparent progress tracking. It also provided dedicated experiences for admins, mentors, and learners to keep the entire program organized and easy to manage.',
     goals: [
       {
         title: 'Define Goals & Milestones',
