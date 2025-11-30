@@ -55,14 +55,14 @@ export const About: React.FC = () => {
               {/* Color Image (Reveals on hover) */}
               <img
                 src="/images/profile-color.jpg"
-                alt="Yugesh Ralli"
+                alt="Yugesh Ralli - Senior Product Designer specializing in Enterprise UX and Design Systems"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"
               />
 
               {/* B&W Image (Default) */}
               <img
                 src="/images/profile-bw.jpg"
-                alt="Yugesh Ralli"
+                alt="Yugesh Ralli - Product Designer portrait in black and white"
                 className="w-full h-full object-cover"
               />
             </div>

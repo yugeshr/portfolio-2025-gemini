@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gemini-nof9wr8f9-yugeshr16-6726s-projects.vercel.app/sitemap.xml

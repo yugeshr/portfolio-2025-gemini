@@ -26,9 +26,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                         <div className="relative overflow-hidden rounded-xl border border-white/10 bg-surface h-full">
                             <motion.img
                                 whileHover={{ scale: 1.03 }}
-                                transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-                                src={project.thumbnailUrl || project.imageUrl}
-                                alt={project.title}
+                                transition={{ duration: 0.4 }}
+                                src={project.thumbnail}
+                                alt={`${project.title} - ${project.description}`}
                                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                             />
                         </div>

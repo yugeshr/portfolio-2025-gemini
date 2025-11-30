@@ -16,7 +16,7 @@ const ClientLogo = ({ name, logo }: { name: string; logo: string }) => {
   return (
     <img
       src={logo}
-      alt={name}
+      alt={`${name} - Client company logo`}
       className="h-20 md:h-24 w-auto object-contain brightness-0 invert opacity-50 group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100 transition-all duration-300"
       onError={() => setError(true)}
     />
