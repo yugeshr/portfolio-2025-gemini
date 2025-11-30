@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CLIENTS } from '../constants';
 
-const ClientLogo = ({ name, logo }: { name: string; logo: string }) => {
+const ClientLogo = ({ name, logo }: { name: string; logo?: string }) => {
   const [error, setError] = useState(false);
 
   if (!logo || error) {
@@ -29,7 +29,7 @@ export const Clients: React.FC = () => {
     <section className="py-12 border-b border-white/5 bg-background relative z-20 overflow-hidden">
       <div className="flex animate-scroll hover:[animation-play-state:paused]">
         {/* First set of logos */}
-        <div className="flex items-center gap-32 md:gap-40 min-w-full justify-around px-8 shrink-0">
+        <div className="flex items-center gap-16 md:gap-40 min-w-full justify-around px-8 shrink-0">
           {CLIENTS.map((client, index) => (
             <motion.div
               key={`${client.name}-1`}
@@ -45,7 +45,7 @@ export const Clients: React.FC = () => {
           ))}
         </div>
         {/* Second set of logos for seamless scrolling */}
-        <div className="flex items-center gap-32 md:gap-40 min-w-full justify-around px-8 shrink-0">
+        <div className="flex items-center gap-16 md:gap-40 min-w-full justify-around px-8 shrink-0">
           {CLIENTS.map((client, index) => (
             <motion.div
               key={`${client.name}-2`}

@@ -326,7 +326,7 @@ export const CaseStudyPage: React.FC = () => {
                                         <img
                                             src={img.url}
                                             alt={img.caption || `Screen ${index + 1}`}
-                                            className="w-full h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                                            className="w-auto max-w-full mx-auto h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
                                             onClick={() => openLightbox(img.url, img.caption)}
                                         />
                                     </div>

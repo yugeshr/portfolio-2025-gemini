@@ -168,10 +168,12 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     imageUrl: getAssetPath('images/ramco-redesign-v2.png'),
     thumbnailUrl: getAssetPath('images/ramco-thumbnail.png'),
     galleryImages: [
-      { url: getAssetPath('images/ramco-redesign.png'), caption: 'Legacy Interface vs New Direction' },
-      { url: getAssetPath('images/ramco-redesign-v2.png'), caption: 'Modernized Dashboard Interface' },
-      { url: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Component+Library', caption: 'Comprehensive Component Library' },
-      { url: 'https://placehold.co/800x600/1a1a1a/ffffff?text=Design+Guidelines', caption: 'Strict Design Guidelines for Consistency' }
+      { url: getAssetPath('images/ramco-dashboard-leave.png'), caption: 'Employee Dashboard: Leave Balance & Quick Actions' },
+      { url: getAssetPath('images/ramco-leave-calendar.png'), caption: 'Leave Calendar: Team Availability View' },
+      { url: getAssetPath('images/ramco-holiday-mapping.png'), caption: 'Holiday Mapping: Location-based Configuration' },
+      { url: getAssetPath('images/ramco-holiday-master.png'), caption: 'Holiday Master: Global Holiday Management' },
+      { url: getAssetPath('images/ramco-employee-profile.png'), caption: 'Employee Profile: Family Information Management' },
+      { url: getAssetPath('images/ramco-qualification-master.png'), caption: 'Qualification Master: Educational Records Setup' }
     ]
   },
   {
