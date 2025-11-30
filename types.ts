@@ -31,6 +31,13 @@ export interface Project {
     points: { title: string; icon: string }[];
     secondaryDescription: string;
   };
+  atomicComponents?: {
+    title: string;
+    subtitle: string;
+    description: string;
+    tags: string[];
+    images: string[];
+  };
   goals?: { title: string; description: string; imageUrl?: string }[];
   outcomeDetails?: { title: string; description: string }[];
   processSteps?: { title: string; description: string; imageUrl?: string }[];

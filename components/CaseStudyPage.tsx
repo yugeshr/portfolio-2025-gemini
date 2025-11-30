@@ -235,6 +235,49 @@ export const CaseStudyPage: React.FC = () => {
                     </div>
                 )}
 
+                {/* --- ATOMIC COMPONENTS SECTION --- */}
+                {project.atomicComponents && (
+                    <div className="mb-32">
+                        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{project.atomicComponents.title}</h2>
+
+                            <div className="mb-12">
+                                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">{project.atomicComponents.subtitle}</span>
+                                <p className="text-lg text-zinc-400 max-w-3xl font-light whitespace-pre-line mb-8">
+                                    {project.atomicComponents.description}
+                                </p>
+                                <div className="flex flex-wrap gap-8">
+                                    {project.atomicComponents.tags.map((tag, index) => (
+                                        <div key={index} className="flex items-center gap-3 text-white">
+                                            {index > 0 && <span className="w-px h-4 bg-zinc-700"></span>}
+                                            <span className="text-lg">{tag}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Marquee */}
+                        <div className="w-full overflow-hidden py-12 bg-black/20">
+                            <motion.div
+                                className="flex gap-8 w-max"
+                                animate={{ x: ["0%", "-50%"] }}
+                                transition={{
+                                    repeat: Infinity,
+                                    ease: "linear",
+                                    duration: 30
+                                }}
+                            >
+                                {[...project.atomicComponents.images, ...project.atomicComponents.images].map((img, index) => (
+                                    <div key={index} className="w-[600px] h-[400px] flex-shrink-0 rounded-xl overflow-hidden border border-white/10 bg-surface">
+                                        <img src={img} alt={`Layout ${index}`} className="w-full h-full object-cover" />
+                                    </div>
+                                ))}
+                            </motion.div>
+                        </div>
+                    </div>
+                )}
+
                 {/* --- GOALS SECTION --- */}
                 {project.goals && (
                     <GoalsSection

@@ -124,6 +124,18 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       ],
       secondaryDescription: 'The first step of building a design system involves in creating a checklist of all the components that might be used in the platform.\nAn Atomic-level component is the smallest component in the design system followed my Molecular-level component which can be used to create dynamic and scalable screen designs.'
     },
+    atomicComponents: {
+      title: 'Atomic Components',
+      subtitle: 'LAYOUT',
+      description: 'A layout consists of three main components that allow users to recognise any design. Setting up layout in the first step helps us in creating wireframes for respective products.\n\nThis process helped the client to visualize their product and the outcome of how the design system would impact the visual layout.',
+      tags: ['Improved balance', 'Clear visibility', 'Clean visuals'],
+      images: [
+        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+1',
+        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+2',
+        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+3',
+        'https://placehold.co/800x600/1a1a1a/ffffff?text=Layout+4'
+      ]
+    },
     processSteps: [
       {
         title: 'Foundation: Grid & Spacing',
