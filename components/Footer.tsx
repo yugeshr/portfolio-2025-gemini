@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="text-6xl md:text-8xl lg:text-[9rem] font-bold tracking-tighter leading-[0.9] mb-12 text-primary/90"
           >
-            Let's build <br /> something <span className="font-serif italic text-zinc-500">scalable.</span>
+            Let's build <br /> something <span className="font-serif italic text-brand">scalable.</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">

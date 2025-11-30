@@ -23,7 +23,7 @@ export const About: React.FC = () => {
             </span>
             <h2 className="text-4xl md:text-6xl font-serif font-medium mb-10 leading-tight text-primary">
               Designer, Engineer <br />
-              <span className="italic text-zinc-400">Traveler & Gamer.</span>
+              <span className="italic text-brand">Traveler & Gamer.</span>
             </h2>
 
             <div className="space-y-8 text-secondary text-lg md:text-xl font-light leading-relaxed max-w-2xl">
