@@ -20,6 +20,11 @@ export interface Project {
     description: string;
     points: { title: string; description: string }[];
   };
+  designSystem?: {
+    title: string;
+    description: string;
+    points: { title: string; icon: string }[];
+  };
   goals?: { title: string; description: string; imageUrl?: string }[];
   outcomeDetails?: { title: string; description: string }[];
   processSteps?: { title: string; description: string; imageUrl?: string }[];

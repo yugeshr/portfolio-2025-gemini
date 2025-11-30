@@ -105,6 +105,16 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
         { title: 'Design Opportunity', description: 'There was a clear need for a more modern, refreshing interface — one that simplifies information input while offering a clean, user-friendly visual structure.' }
       ]
     },
+    designSystem: {
+      title: 'Introducing Design System',
+      description: 'A Design System is a set of interconnected patterns and shared practices coherently organized. Design Systems aid in digital product design and development of products such as apps or websites.\n\nThe system can be broken down into different types based on the need of the product',
+      points: [
+        { title: 'Atomic', icon: 'atom' },
+        { title: 'Molecular', icon: 'molecule' },
+        { title: 'Organism', icon: 'organism' },
+        { title: 'Template', icon: 'template' }
+      ]
+    },
     processSteps: [
       {
         title: 'Foundation: Grid & Spacing',

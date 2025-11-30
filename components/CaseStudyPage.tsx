@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, CheckCircle2, AlertCircle, Atom, Share2, Hexagon, LayoutTemplate } from 'lucide-react';
 import { Lightbox } from './Lightbox';
 
 export const CaseStudyPage: React.FC = () => {
@@ -163,6 +163,39 @@ export const CaseStudyPage: React.FC = () => {
                                     </p>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* --- DESIGN SYSTEM SECTION --- */}
+                {project.designSystem && (
+                    <div className="mb-32">
+                        <div className="text-center mb-16">
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Design System</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.designSystem.title}</h2>
+                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light whitespace-pre-line">
+                                {project.designSystem.description}
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {project.designSystem.points.map((point, index) => {
+                                const Icon = {
+                                    'atom': Atom,
+                                    'molecule': Share2,
+                                    'organism': Hexagon,
+                                    'template': LayoutTemplate
+                                }[point.icon] || Atom;
+
+                                return (
+                                    <div key={index} className="bg-surface border border-white/10 p-8 rounded-2xl hover:bg-white/[0.02] transition-colors flex flex-col items-center text-center group">
+                                        <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
+                                            <Icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                                        </div>
+                                        <h3 className="text-lg font-bold text-white">{point.title}</h3>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 )}
