@@ -10,10 +10,9 @@ export const NAV_LINKS = [
 
 // Helper to handle base path for assets
 const getAssetPath = (path: string) => {
-  const baseUrl = import.meta.env.BASE_URL;
-  // Remove leading slash from path if it exists to avoid double slashes
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  return `${baseUrl}${cleanPath}`;
+  // Ensure path starts with / for proper URL resolution
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return cleanPath;
 };
 
 export const CLIENTS = [
