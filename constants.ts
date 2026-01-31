@@ -193,26 +193,33 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     id: '1',
     role: 'Senior Product Designer',
+    company: 'Vectramind',
+    period: 'Jan 2026 - Present',
+    description: 'Leading design initiatives for enterprise scalability for Healthcare & Communication domain.'
+  },
+  {
+    id: '2',
+    role: 'Senior Product Designer',
     company: 'Auzmor',
     period: 'Jun 2022 - Jun 2025',
     description: 'Led major design initiatives across Auzmor’s Employee Experience Suite. Rose from Associate to Senior Product Designer, contributing to the LMS platform\'s growth from zero-to-one features to enterprise scalability.'
   },
   {
-    id: '2',
+    id: '3',
     role: 'Associate Senior UI/UX Designer',
     company: 'Lollypop Design Studio',
     period: 'Sep 2019 - Dec 2021',
     description: 'Delivered high-quality UI/UX solutions for diverse clients including Hexaware, Cisco, and Intel. Progressed from Associate to Associate Senior Designer, mentoring junior designers and leading project deliverables.'
   },
   {
-    id: '3',
+    id: '4',
     role: 'Web Development Intern',
     company: 'Sentinel Radiology Solutions',
     period: 'Dec 2017 - Mar 2018',
     description: 'Sentinel Radiology Solutions is a Tele-healthcare startup with over 70 clients across various geographical boundaries.'
   },
   {
-    id: '4',
+    id: '5',
     role: 'Creative Designer',
     company: 'IMPRESSED EVENTZ',
     period: 'Feb 2016 - Feb 2017',
