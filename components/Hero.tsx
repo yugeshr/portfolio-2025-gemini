@@ -1,10 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, ArrowRight } from 'lucide-react';
+import { ArrowDown, Calendar, ArrowRight } from 'lucide-react';
+import { BookingModal } from './BookingModal';
+import { useState } from 'react';
 
 export const Hero: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-6 md:pb-12 overflow-hidden w-full">
         {/* Background Glow */}
         <motion.div
@@ -84,18 +89,16 @@ export const Hero: React.FC = () => {
                 View Case Studies
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </motion.a>
-              <motion.a
-                href="https://drive.google.com/file/d/1favCSrwPPg1nctqWuU9piLxCgpiagkLM/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                onClick={() => setIsModalOpen(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className="group flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300"
               >
-                <Download size={18} />
-                <span className="font-medium">Download Resume</span>
-              </motion.a>
+                <Calendar size={18} />
+                <span className="font-medium">Book Session with me</span>
+              </motion.button>
             </motion.div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Calendar } from 'lucide-react';
+import { BookingModal } from './BookingModal';
 import { NAV_LINKS } from '../constants';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -9,6 +10,7 @@ export const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,6 +79,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -104,15 +107,16 @@ export const Navigation: React.FC = () => {
                 {link.label}
               </motion.a>
             ))}
-            <motion.a
+            <motion.button
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9, duration: 0.5 }}
-              href="mailto:yugeshr16@gmail.com"
-              className="px-6 py-2 border border-border rounded-full text-sm font-medium hover:bg-brand hover:text-white hover:border-brand transition-all duration-300"
+              onClick={() => setIsModalOpen(true)}
+              className="px-6 py-2 border border-border rounded-full text-sm font-medium hover:bg-brand hover:text-white hover:border-brand transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
-              Get in Touch
-            </motion.a>
+              <Calendar size={16} />
+              Book Session
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
