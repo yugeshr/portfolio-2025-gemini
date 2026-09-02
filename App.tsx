@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
@@ -22,7 +23,7 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Preloader />
       <HashRouter>
         <ScrollToTop />
@@ -42,7 +43,7 @@ const App: React.FC = () => {
         <Analytics />
         <SpeedInsights />
       </HashRouter>
-    </>
+    </MotionConfig>
   );
 };
 

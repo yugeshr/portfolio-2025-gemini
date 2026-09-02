@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           </a>
           <div className="flex flex-col md:text-right space-y-1">
             <span className="text-zinc-600 text-xs uppercase tracking-widest">© {new Date().getFullYear()} Yugesh Ralli. All Rights Reserved.</span>
-            <span className="text-zinc-600 text-xs">Vibe coded using Google Antigravity.</span>
+            <span className="text-zinc-600 text-xs">Vibe coded using Claude.</span>
           </div>
         </div>
       </div>

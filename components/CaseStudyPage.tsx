@@ -128,35 +128,54 @@ export const CaseStudyPage: React.FC = () => {
 
                 {/* --- PROBLEM SECTION --- */}
                 {project.challenge && (
-                    <div className="mb-32">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="mb-32"
+                    >
                         <div className="flex flex-col items-center text-center border-t border-white/10 pt-16 max-w-4xl mx-auto">
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-6">The Problem</span>
                             <p className="text-xl text-zinc-300 leading-relaxed font-light">
                                 {project.challenge}
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* --- USER RESEARCH SECTION (Who Are The Users?) --- */}
                 {project.userResearch && (
                     <div className="mb-32">
-                        <div className="text-center mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center mb-16"
+                        >
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">User Research</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.userResearch.title}</h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
                                 {project.userResearch.description}
                             </p>
-                        </div>
+                        </motion.div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {project.userResearch.points.map((point, index) => (
-                                <div key={index} className="bg-surface border border-white/10 p-8 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                    className="bg-surface border border-white/10 p-8 rounded-2xl hover:bg-white/[0.02] transition-colors"
+                                >
                                     <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
                                     <p className="text-zinc-400 leading-relaxed font-light">
                                         {point.description}
                                     </p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -165,13 +184,19 @@ export const CaseStudyPage: React.FC = () => {
                 {/* --- DESIGN SYSTEM SECTION --- */}
                 {project.designSystem && (
                     <div className="mb-32">
-                        <div className="text-center mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center mb-16"
+                        >
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Design System</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.designSystem.title}</h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light whitespace-pre-line">
                                 {project.designSystem.description}
                             </p>
-                        </div>
+                        </motion.div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {project.designSystem.points.map((point, index) => {
@@ -183,12 +208,19 @@ export const CaseStudyPage: React.FC = () => {
                                 }[point.icon] || Atom;
 
                                 return (
-                                    <div key={index} className="bg-surface border border-white/10 p-8 rounded-2xl hover:bg-white/[0.02] transition-colors flex flex-col items-center text-center group">
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, margin: "-100px" }}
+                                        transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                                        className="bg-surface border border-white/10 p-8 rounded-2xl hover:bg-white/[0.02] transition-colors flex flex-col items-center text-center group"
+                                    >
                                         <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
                                             <Icon className="w-8 h-8 text-white" strokeWidth={1.5} />
                                         </div>
                                         <h3 className="text-lg font-bold text-white">{point.title}</h3>
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
                         </div>
@@ -197,7 +229,13 @@ export const CaseStudyPage: React.FC = () => {
 
                 {/* --- BUILDING DESIGN SYSTEM SECTION --- */}
                 {project.buildingDesignSystem && (
-                    <div className="mb-32">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="mb-32"
+                    >
                         <div className="text-center mb-16">
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Building The Design System</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.buildingDesignSystem.title}</h2>
@@ -215,10 +253,17 @@ export const CaseStudyPage: React.FC = () => {
                                     }[point.icon] || Atom;
 
                                     return (
-                                        <div key={index} className="flex items-center gap-4 bg-surface border border-white/10 px-8 py-4 rounded-full">
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true, margin: "-100px" }}
+                                            transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                                            className="flex items-center gap-4 bg-surface border border-white/10 px-8 py-4 rounded-full"
+                                        >
                                             <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
                                             <span className="text-xl font-bold text-white">{point.title}</span>
-                                        </div>
+                                        </motion.div>
                                     );
                                 })}
                             </div>
@@ -227,7 +272,7 @@ export const CaseStudyPage: React.FC = () => {
                                 {project.buildingDesignSystem.secondaryDescription}
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* --- ATOMIC COMPONENTS SECTION --- */}
@@ -252,22 +297,29 @@ export const CaseStudyPage: React.FC = () => {
                                 </motion.div>
                             )}
 
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{project.atomicComponents.title}</h2>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            >
+                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">{project.atomicComponents.title}</h2>
 
-                            <div className="mb-12">
-                                <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">{project.atomicComponents.subtitle}</span>
-                                <p className="text-lg text-zinc-400 max-w-3xl font-light whitespace-pre-line mb-8">
-                                    {project.atomicComponents.description}
-                                </p>
-                                <div className="flex flex-wrap gap-8">
-                                    {project.atomicComponents.tags.map((tag, index) => (
-                                        <div key={index} className="flex items-center gap-3 text-white">
-                                            {index > 0 && <span className="w-px h-4 bg-zinc-700"></span>}
-                                            <span className="text-lg">{tag}</span>
-                                        </div>
-                                    ))}
+                                <div className="mb-12">
+                                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">{project.atomicComponents.subtitle}</span>
+                                    <p className="text-lg text-zinc-400 max-w-3xl font-light whitespace-pre-line mb-8">
+                                        {project.atomicComponents.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-8">
+                                        {project.atomicComponents.tags.map((tag, index) => (
+                                            <div key={index} className="flex items-center gap-3 text-white">
+                                                {index > 0 && <span className="w-px h-4 bg-zinc-700"></span>}
+                                                <span className="text-lg">{tag}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
 
                         {/* Marquee */}
@@ -305,7 +357,13 @@ export const CaseStudyPage: React.FC = () => {
                 {/* --- PROCESS / JOURNEY MAP SECTION --- */}
                 {project.processSteps && (
                     <div className="mb-32">
-                        <div className="text-center mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center mb-16"
+                        >
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">{project.processLabel || 'Atomic Components'}</span>
                             {project.processTitle && (
                                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{project.processTitle}</h2>
@@ -313,9 +371,16 @@ export const CaseStudyPage: React.FC = () => {
                             {project.processDescription && (
                                 <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">{project.processDescription}</p>
                             )}
-                        </div>
+                        </motion.div>
                         {project.processSteps.map((step, index) => (
-                            <div key={index} className="mb-16 last:mb-0">
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                                className="mb-16 last:mb-0"
+                            >
                                 <div className="text-center mb-8">
                                     <span className="text-xs font-bold text-zinc-600 tracking-widest block mb-3">{String(index + 1).padStart(2, '0')}</span>
                                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{step.title}</h3>
@@ -331,7 +396,7 @@ export const CaseStudyPage: React.FC = () => {
                                         />
                                     </div>
                                 )}
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 )}
@@ -339,16 +404,29 @@ export const CaseStudyPage: React.FC = () => {
                 {/* --- FINAL UI SCREENS (GALLERY) --- */}
                 {project.galleryImages && (
                     <div className="mb-32">
-                        <div className="text-center mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="text-center mb-16"
+                        >
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">{project.galleryLabel || 'Visuals'}</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.galleryTitle || 'From Figma to Code: Final UI Screens'}</h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
                                 {project.galleryDescription || 'These screens showcase how the mentorship feature was designed to balance structure and flexibility—allowing admins, mentors, and mentees to engage meaningfully across goals, milestones, and feedback touchpoints.'}
                             </p>
-                        </div>
+                        </motion.div>
                         <div className="space-y-20">
                             {project.galleryImages.map((img, index) => (
-                                <div key={index} className="group">
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                                    className="group"
+                                >
                                     <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface mb-6 shadow-2xl shadow-black/50">
                                         <img
                                             src={img.url}
@@ -364,7 +442,7 @@ export const CaseStudyPage: React.FC = () => {
                                             </p>
                                         </div>
                                     )}
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -372,7 +450,13 @@ export const CaseStudyPage: React.FC = () => {
 
                 {/* --- OUTCOME SECTION (What We Achieved) --- */}
                 {project.outcomeDetails ? (
-                    <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 md:p-12 mb-32">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 md:p-12 mb-32"
+                    >
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.outcomeDetailsTitle || 'What We Achieved'}</h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
@@ -382,15 +466,28 @@ export const CaseStudyPage: React.FC = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {project.outcomeDetails.map((detail, index) => (
-                                <div key={index} className="text-center">
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                    className="text-center"
+                                >
                                     <h3 className="text-lg font-bold text-white mb-3">{detail.title}</h3>
                                     <p className="text-sm text-zinc-400 leading-relaxed">{detail.description}</p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 ) : (
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32"
+                    >
                         <div className="lg:col-span-4">
                             <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The Outcome</h3>
                         </div>
@@ -401,11 +498,17 @@ export const CaseStudyPage: React.FC = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* Next Project Navigation */}
-                <div className="border-t border-white/10 pt-20">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="border-t border-white/10 pt-20"
+                >
                     <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-8 block">Next Project</span>
                     <Link to={`/work/${nextProject.id}`} className="group block">
                         <h2 className="text-4xl md:text-6xl font-bold text-white group-hover:text-zinc-300 transition-colors mb-4 flex items-center justify-between">
@@ -414,7 +517,7 @@ export const CaseStudyPage: React.FC = () => {
                         </h2>
                         <p className="text-zinc-500 text-lg">See Case Study</p>
                     </Link>
-                </div>
+                </motion.div>
 
             </div>
 
