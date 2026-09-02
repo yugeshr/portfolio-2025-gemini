@@ -88,11 +88,11 @@ export const CaseStudyPage: React.FC = () => {
                     </div>
                     <div>
                         <span className="block text-xs font-bold text-zinc-500 uppercase tracking-widest mb-2">Platform</span>
-                        <span className="text-lg text-white">Web / Desktop</span>
+                        <span className="text-lg text-white">{project.platform || 'Web / Desktop'}</span>
                     </div>
                     <div>
                         <span className="block text-xs font-bold text-zinc-500 uppercase tracking-widest mb-2">Company</span>
-                        <span className="text-lg text-white">Auzmor</span>
+                        <span className="text-lg text-white">{project.company || 'Auzmor'}</span>
                     </div>
                 </motion.div>
 
@@ -110,6 +110,21 @@ export const CaseStudyPage: React.FC = () => {
                         onClick={() => openLightbox(project.imageUrl, project.title)}
                     />
                 </motion.div>
+
+                {/* Live Demo CTA */}
+                {project.liveUrl && (
+                    <div className="flex justify-center -mt-16 mb-24">
+                        <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-white bg-primary/10 border border-white/10 hover:bg-white/10 px-6 py-3 rounded-full transition-colors"
+                        >
+                            {project.liveUrlText || 'Play the Live Game'}
+                            <ArrowUpRight size={16} />
+                        </a>
+                    </div>
+                )}
 
                 {/* --- PROBLEM SECTION --- */}
                 {project.challenge && (
@@ -279,6 +294,9 @@ export const CaseStudyPage: React.FC = () => {
                 {/* --- GOALS SECTION --- */}
                 {project.goals && (
                     <GoalsSection
+                        label={project.goalsLabel}
+                        title={project.goalsTitle}
+                        description={project.goalsDescription}
                         goals={project.goals}
                         onImageClick={(img, title, desc) => openLightbox(img, `${title}: ${desc}`)}
                     />
@@ -287,11 +305,20 @@ export const CaseStudyPage: React.FC = () => {
                 {/* --- PROCESS / JOURNEY MAP SECTION --- */}
                 {project.processSteps && (
                     <div className="mb-32">
+                        <div className="text-center mb-16">
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">{project.processLabel || 'Atomic Components'}</span>
+                            {project.processTitle && (
+                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{project.processTitle}</h2>
+                            )}
+                            {project.processDescription && (
+                                <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">{project.processDescription}</p>
+                            )}
+                        </div>
                         {project.processSteps.map((step, index) => (
-                            <div key={index} className="mb-20 last:mb-0">
-                                <div className="text-center mb-12">
-                                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Atomic Components</span>
-                                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{step.title}</h2>
+                            <div key={index} className="mb-16 last:mb-0">
+                                <div className="text-center mb-8">
+                                    <span className="text-xs font-bold text-zinc-600 tracking-widest block mb-3">{String(index + 1).padStart(2, '0')}</span>
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{step.title}</h3>
                                     <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">{step.description}</p>
                                 </div>
                                 {step.imageUrl && (
@@ -313,10 +340,10 @@ export const CaseStudyPage: React.FC = () => {
                 {project.galleryImages && (
                     <div className="mb-32">
                         <div className="text-center mb-16">
-                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">Visuals</span>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">From Figma to Code: Final UI Screens</h2>
+                            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">{project.galleryLabel || 'Visuals'}</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.galleryTitle || 'From Figma to Code: Final UI Screens'}</h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
-                                These screens showcase how the mentorship feature was designed to balance structure and flexibility—allowing admins, mentors, and mentees to engage meaningfully across goals, milestones, and feedback touchpoints.
+                                {project.galleryDescription || 'These screens showcase how the mentorship feature was designed to balance structure and flexibility—allowing admins, mentors, and mentees to engage meaningfully across goals, milestones, and feedback touchpoints.'}
                             </p>
                         </div>
                         <div className="space-y-20">
@@ -347,9 +374,9 @@ export const CaseStudyPage: React.FC = () => {
                 {project.outcomeDetails ? (
                     <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 md:p-12 mb-32">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">What We Achieved</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.outcomeDetailsTitle || 'What We Achieved'}</h2>
                             <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
-                                The Mentorship Platform was successfully rolled out to enterprise clients, and became a core part of the LMS ecosystem. Despite tight timelines and limited UX infrastructure, the feature delivered measurable impact across multiple fronts.
+                                {project.outcomeDetailsIntro || 'The Mentorship Platform was successfully rolled out to enterprise clients, and became a core part of the LMS ecosystem. Despite tight timelines and limited UX infrastructure, the feature delivered measurable impact across multiple fronts.'}
                             </p>
                         </div>
 
@@ -401,19 +428,22 @@ export const CaseStudyPage: React.FC = () => {
 };
 
 const GoalsSection: React.FC<{
+    label?: string,
+    title?: string,
+    description?: string,
     goals: NonNullable<typeof PROJECTS[0]['goals']>,
     onImageClick: (src: string, title: string, desc: string) => void
-}> = ({ goals, onImageClick }) => {
+}> = ({ label, title, description, goals, onImageClick }) => {
     return (
         <section className="py-16 md:py-32">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
                 {/* Sticky Header (Left Column) */}
                 <div className="lg:col-span-5">
                     <div className="lg:sticky lg:top-32">
-                        <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">The Goal</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">Scalable Mentorship System</h2>
+                        <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">{label || 'The Goal'}</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">{title || 'Scalable Mentorship System'}</h2>
                         <p className="text-xl text-zinc-400 font-light leading-relaxed mb-8">
-                            To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.
+                            {description || 'To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.'}
                         </p>
                         <div className="hidden lg:block w-12 h-1 bg-primary/20 rounded-full"></div>
                     </div>

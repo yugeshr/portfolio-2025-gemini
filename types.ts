@@ -3,6 +3,8 @@ export interface Project {
   title: string;
   role: string;
   timeline?: string;
+  platform?: string;
+  company?: string;
   tags: string[];
   description: string; // Brief overview
   overview?: string;
@@ -13,6 +15,8 @@ export interface Project {
   thumbnailUrl?: string;
   link?: string;
   ctaText?: string;
+  liveUrl?: string;
+  liveUrlText?: string;
   isGallery?: boolean; // For the Concept Exploration project
   problemPoints?: { title: string; description: string }[];
   userResearch?: {
@@ -39,9 +43,20 @@ export interface Project {
     images: string[];
     mainImage?: string;
   };
+  goalsLabel?: string;
+  goalsTitle?: string;
+  goalsDescription?: string;
   goals?: { title: string; description: string; imageUrl?: string }[];
+  outcomeDetailsTitle?: string;
+  outcomeDetailsIntro?: string;
   outcomeDetails?: { title: string; description: string }[];
+  processLabel?: string;
+  processTitle?: string;
+  processDescription?: string;
   processSteps?: { title: string; description: string; imageUrl?: string }[];
+  galleryLabel?: string;
+  galleryTitle?: string;
+  galleryDescription?: string;
   galleryImages?: { url: string; caption?: string }[];
 }
 

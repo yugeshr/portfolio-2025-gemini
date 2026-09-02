@@ -51,7 +51,7 @@ export const Home: React.FC = () => {
                     className="mb-24 flex items-end justify-between border-b border-border pb-8"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold">Selected Work</h2>
-                    <span className="hidden md:block text-zinc-600 text-sm uppercase tracking-widest">Enterprise & Systems</span>
+                    <span className="hidden md:block text-zinc-600 text-sm uppercase tracking-widest">Product Design & Builds</span>
                 </motion.div>
 
                 <div className="flex flex-col">

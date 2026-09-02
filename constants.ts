@@ -38,6 +38,79 @@ export const PERSONAL_GALLERY = [
 
 export const PROJECTS: Array<Project> = [
   {
+    id: 'memo-io-multiplayer-game',
+    title: 'memo.io — A Real-Time \nMultiplayer Memory Game',
+    role: 'Product Designer, Solo Build',
+    timeline: '1 Week',
+    platform: 'Web / Discord Activity',
+    company: 'Personal Project',
+    tags: ['AI-Assisted Build', 'Real-Time Multiplayer', 'Personal Project'],
+    description: 'Designed and solo-built a real-time multiplayer memory game — from written brief to a production Discord Activity — using Claude as an AI development partner.',
+    overview: `As a product designer, most of what I ship lives in Figma — flows, prototypes, specs handed off to engineering. I wanted to prove I could take an idea all the way to a real, technically complex, production product on my own — not a static mockup, but something people could actually play together in real time.
+
+I designed and built memo.io, a real-time multiplayer memory-matching game, using Claude as an AI development partner across the entire stack — a Socket.io backend, a React frontend, anti-cheat game logic, three game modes, six visual themes, and a native Discord Activity integration — then shipped it to production.`,
+    challenge: "Most designer portfolios stop at high-fidelity mockups. There's rarely a way to show whether a designer actually understands what it takes to make something real — state management, real-time sync, server authority, deployment — the parts that decide whether a product actually works.",
+    solution: 'I designed and built the entire system myself — real-time architecture, anti-cheat logic, three game modes, six card themes, and a native Discord Activity — shipping it to production as a working proof of both product thinking and execution.',
+    goalsLabel: 'The Goal',
+    goalsTitle: 'A Real Product, Not Just a Prototype',
+    goalsDescription: "To prove design thinking translates into working software, I focused on four things a portfolio mockup can't show: real-time architecture, competitive integrity, replayability, and reach beyond a single browser tab.",
+    goals: [
+      {
+        title: 'Real-Time Multiplayer Architecture',
+        description: 'Every player races on their own grid, synced by a Socket.io backend with sub-second updates — no turns, no polling, no lag.',
+      },
+      {
+        title: 'Competitive Integrity by Design',
+        description: 'The server never sends the full deck to any client — only per-flip reveals, rate-limiting, and index validation. Anti-cheat is architecture, not an afterthought.',
+      },
+      {
+        title: 'Replayability Through Modes & Themes',
+        description: 'Three formats — Quick, League, and Powers (with offensive power-ups) — across six visual themes, from emoji to Dota 2 heroes.',
+      },
+      {
+        title: 'Cross-Platform Reach',
+        description: 'Shipped as a native Discord Activity, playable directly inside a voice channel — not just a standalone website.',
+      }
+    ],
+    processLabel: 'The Process',
+    processTitle: 'How It Actually Got Built',
+    processDescription: "Not a weekend hackathon demo — a deliberate build, scoped like a real feature and shipped like one.",
+    processSteps: [
+      {
+        title: 'Started With a Written Brief',
+        description: "Rather than jumping straight into code, I wrote a full product brief first — session flow, game mechanics, live leaderboard behavior, and technical architecture — the same way I'd scope a feature for engineering.",
+      },
+      {
+        title: 'Built and Iterated With Claude',
+        description: 'In just one week and over 100 commits, I used Claude as a hands-on development partner — building the Socket.io backend, the React frontend, and iterating through game modes, power-ups, card themes, and a full Discord Activity integration.',
+      },
+      {
+        title: 'Shipped to Production',
+        description: 'The game runs on a Vercel-hosted frontend and a Railway-hosted real-time backend — including, most recently, a live infrastructure migration to a new hosting account with zero disruption to players.',
+      }
+    ],
+    imageUrl: getAssetPath('images/memo-io-gameplay.png'),
+    thumbnailUrl: getAssetPath('images/memo-io-home.png'),
+    liveUrl: 'https://memo-io.vercel.app',
+    liveUrlText: 'Play memo.io Live',
+    galleryLabel: 'Visuals',
+    galleryTitle: 'From Brief to Build: Live Product Screens',
+    galleryDescription: 'These are real screens from the deployed game, not mockups — every state shown here is running in production. More gameplay and Discord Activity screens coming soon.',
+    galleryImages: [
+      { url: getAssetPath('images/memo-io-home.png'), caption: 'The landing screen: pick an avatar, name yourself, and create or join a session — no account needed.' },
+      { url: getAssetPath('images/memo-io-lobby.png'), caption: 'The lobby: the host picks difficulty, card theme, and one of three game modes before everyone readies up.' },
+      { url: getAssetPath('images/memo-io-gameplay.png'), caption: 'Live gameplay: every player races on their own grid while the sidebar tracks real-time standings.' },
+    ],
+    outcomeDetailsTitle: 'What Shipped',
+    outcomeDetailsIntro: 'memo.io went from a one-page brief to a fully working, production-deployed product — real-time multiplayer, three game modes, and a native Discord Activity integration, built solo with AI as a development partner.',
+    outcomeDetails: [
+      { title: '100+ Commits, 1 Week', description: 'From a written product brief to a fully shipped, production-deployed game.' },
+      { title: '3 Game Modes', description: 'Quick, League (best-of series with round history), and Powers (offensive power-ups).' },
+      { title: '6 Card Themes', description: 'Emoji, playing cards, flags, zodiac, Pokémon, and Dota 2 heroes.' },
+      { title: 'Live on Web + Discord', description: 'Deployed on Vercel and Railway, playable directly inside a Discord Activity.' },
+    ],
+  },
+  {
     id: 'scalable-mentorship-auzmor',
     title: 'Scalable Mentorship for \nAuzmor Learn',
     role: 'Senior Product Designer',
