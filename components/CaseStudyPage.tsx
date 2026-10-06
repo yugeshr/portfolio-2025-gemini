@@ -412,10 +412,12 @@ export const CaseStudyPage: React.FC = () => {
                             className="text-center mb-16"
                         >
                             <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-2">{project.galleryLabel || 'Visuals'}</span>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.galleryTitle || 'From Figma to Code: Final UI Screens'}</h2>
-                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
-                                {project.galleryDescription || 'These screens showcase how the mentorship feature was designed to balance structure and flexibility—allowing admins, mentors, and mentees to engage meaningfully across goals, milestones, and feedback touchpoints.'}
-                            </p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.galleryTitle || 'Final UI screens'}</h2>
+                            {project.galleryDescription && (
+                                <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
+                                    {project.galleryDescription}
+                                </p>
+                            )}
                         </motion.div>
                         <div className="space-y-20">
                             {project.galleryImages.map((img, index) => (
@@ -431,7 +433,7 @@ export const CaseStudyPage: React.FC = () => {
                                         <img
                                             src={img.url}
                                             alt={img.caption || `Screen ${index + 1}`}
-                                            className="w-auto max-w-full mx-auto h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
+                                            className="w-auto max-w-full max-h-[85vh] mx-auto h-auto cursor-pointer hover:scale-[1.01] transition-transform duration-500"
                                             onClick={() => openLightbox(img.url, img.caption)}
                                         />
                                     </div>
@@ -458,10 +460,12 @@ export const CaseStudyPage: React.FC = () => {
                         className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 md:p-12 mb-32"
                     >
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.outcomeDetailsTitle || 'What We Achieved'}</h2>
-                            <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
-                                {project.outcomeDetailsIntro || 'The Mentorship Platform was successfully rolled out to enterprise clients, and became a core part of the LMS ecosystem. Despite tight timelines and limited UX infrastructure, the feature delivered measurable impact across multiple fronts.'}
-                            </p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{project.outcomeDetailsTitle || 'What we achieved'}</h2>
+                            {project.outcomeDetailsIntro && (
+                                <p className="text-lg text-zinc-400 max-w-3xl mx-auto font-light">
+                                    {project.outcomeDetailsIntro}
+                                </p>
+                            )}
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -489,7 +493,7 @@ export const CaseStudyPage: React.FC = () => {
                         className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32"
                     >
                         <div className="lg:col-span-4">
-                            <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The Outcome</h3>
+                            <h3 className="text-2xl font-bold text-white mb-4 sticky top-32">The outcome</h3>
                         </div>
                         <div className="lg:col-span-8">
                             <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 md:p-12">
@@ -544,10 +548,12 @@ const GoalsSection: React.FC<{
                 <div className="lg:col-span-5">
                     <div className="lg:sticky lg:top-32">
                         <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4">{label || 'The Goal'}</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">{title || 'Scalable Mentorship System'}</h2>
-                        <p className="text-xl text-zinc-400 font-light leading-relaxed mb-8">
-                            {description || 'To make mentorship meaningful and scalable, we focused on designing four core pillars — structure, flexibility, visibility, and human connection.'}
-                        </p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">{title || 'Goals'}</h2>
+                        {description && (
+                            <p className="text-xl text-zinc-400 font-light leading-relaxed mb-8">
+                                {description}
+                            </p>
+                        )}
                         <div className="hidden lg:block w-12 h-1 bg-primary/20 rounded-full"></div>
                     </div>
                 </div>

@@ -28,13 +28,13 @@ export const About: React.FC = () => {
 
             <div className="space-y-8 text-secondary text-lg md:text-xl font-light leading-relaxed max-w-2xl">
               <h3 className="text-white font-medium text-2xl">
-                Design isn’t just about pixels and trends. It’s about understanding people, their needs, and how they interact with technology.
+                Good design starts with understanding people: what they need and how they use technology.
               </h3>
               <p>
-                I’m a Senior Product Designer with 5 years of experience creating clean, intuitive interfaces that make complex ideas simple and people’s lives easier.
+                I'm a Senior Product Designer with 5 years of experience designing clean interfaces that make complex products simple to use.
               </p>
               <p>
-                I thrive on problem-solving, collaboration, and continuous learning, with the goal of crafting seamless, enjoyable, and impactful experiences—whether refining existing products or building them from the ground up.
+                I like solving problems with other people and learning as I go. I've improved products that already existed and built new ones from scratch.
               </p>
             </div>
           </motion.div>

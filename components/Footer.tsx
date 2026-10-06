@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               className="max-w-xl"
             >
               <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed">
-                I am currently open to opportunities in Product Design, specifically roles involving Complex SaaS, Enterprise Tools, or Design Systems.
+                I'm open to product design roles, especially in complex SaaS, enterprise tools, and design systems.
               </p>
             </motion.div>
 

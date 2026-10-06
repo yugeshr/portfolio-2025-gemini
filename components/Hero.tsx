@@ -65,8 +65,8 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg md:text-2xl text-secondary font-light max-w-2xl leading-relaxed pt-4"
             >
-              I bridge the gap between complex legacy systems and intuitive modern experiences.
-              Bringing <span className="text-primary font-medium">visual clarity</span> to enterprise software.
+              I redesign complex, legacy enterprise software so it's
+              <span className="text-primary font-medium"> clear</span> and easy to use.
             </motion.p>
 
             <motion.div

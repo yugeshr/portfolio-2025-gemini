@@ -38,144 +38,231 @@ export const PERSONAL_GALLERY = [
 
 export const PROJECTS: Array<Project> = [
   {
+    id: 'clan-fitness-social-accountability',
+    title: 'Clan Fitness: accountability \nfor small groups',
+    role: 'Product Designer, Solo Build',
+    timeline: '17 Days to Launch',
+    platform: 'Mobile Web / PWA',
+    company: 'Personal Project',
+    tags: ['Zero-to-One', 'Social Product', 'Personal Project'],
+    description: 'A fitness app for small groups of friends, built to replace a WhatsApp group that had stopped working. Members log their gym, steps, and food each day, and the group can see who skipped.',
+    overview: `It started in a WhatsApp group. My friends and I posted gym check-ins, step-count screenshots, and meal photos to keep each other going. The updates got buried under the rest of the chat, nobody could tell who had been consistent that week, and when someone skipped a day, no one noticed.
+
+So I designed and built Clan Fitness. A group of up to 15 people forms a clan. Everyone logs their gym, steps, and food each day, reacts to each other's check-ins, and competes on a weekly leaderboard. I shipped the first version in 17 days, and real groups have used it since.`,
+    challenge: "Most fitness apps are built for one person or for a crowd of strangers. A solo tracker is easy to ignore, and a public community won't notice if you skip. What kept my friends and me consistent was a small group of people we knew. A group chat gave us that, but it couldn't track streaks or show at a glance who had logged today.",
+    solution: "The core of the app is a daily log that takes a few seconds to fill in. Check-ins show up in a clan feed where people react and comment. Streaks and a weekly leaderboard keep score, and members can nudge anyone who hasn't logged yet.",
+    goalsLabel: 'The Goal',
+    goalsTitle: 'Four rules from the WhatsApp group',
+    goalsDescription: "I based the design on what worked in our WhatsApp group and what didn't.",
+    goals: [
+      {
+        title: 'Small groups of people you know',
+        description: 'A clan has at most 15 people, and you join with an invite link or code. Being watched only helps if the people watching know you.',
+      },
+      {
+        title: 'Fast logging',
+        description: 'One daily log covers gym, steps, and food, with up to three meal photos. People stop logging when it feels like a chore, so I kept the form short.',
+      },
+      {
+        title: 'Friendly social pressure',
+        description: "Members can react, comment with @mentions, and nudge anyone who hasn't logged. Each week the app posts a Wall of Fame and a Wall of Shame to the clan.",
+      },
+      {
+        title: 'Reasons to come back',
+        description: 'Beyond the daily log, there are streaks, a leaderboard you can view by day, week, or month, daily contracts and duels, and profile levels to work toward.',
+      }
+    ],
+    processLabel: 'The Process',
+    processTitle: 'Shipping early and listening',
+    processDescription: 'The first version went live on day one. Most of what came after was based on how real clans used it.',
+    processSteps: [
+      {
+        title: 'Day one: the core loop',
+        description: "I started with the smallest version worth using. You could sign up, create or join a clan, log your day, and see everyone's check-ins in a shared feed with reactions.",
+      },
+      {
+        title: 'Making it feel like an app',
+        description: 'People track habits on their phones, so I made Clan Fitness an installable PWA with push notifications, an unread badge on the app icon, bottom sheets, haptics, and pull-to-refresh. A lot of this phase went into fixing iOS Safari and Android bugs that never show up in a design file.',
+      },
+      {
+        title: 'Listening to testers',
+        description: 'I added an in-app feedback chat so testers could message me directly, and most of the roadmap came from it. Fixes and features that came out of it include a bug that saved check-ins from India to the wrong day, a nudge for friends who forgot to log, and a group chat for each clan, which grew out of the feedback chat itself.',
+      },
+      {
+        title: 'Adding a game layer',
+        description: 'Once people were logging every day, I gave them more to play for: a weekly Wall of Fame and Wall of Shame, an activity heatmap on profiles, and contracts. Contracts are daily challenges, like hitting 10,000 steps or beating a randomly assigned rival in a duel, and completing them earns points toward your level.',
+      },
+      {
+        title: 'Running it',
+        description: 'From an admin panel I can change leaderboard weights and default targets without a deploy, send announcements to specific clans or people, and check whether notifications are being delivered. The app runs on Next.js, Postgres, and Vercel, and I wrote it with Claude as a coding partner.',
+      }
+    ],
+    imageUrl: getAssetPath('images/clan-fitness-hero.png'),
+    thumbnailUrl: getAssetPath('images/clan-fitness-thumbnail.png'),
+    liveUrl: 'https://www.clanfitness.in',
+    liveUrlText: 'Try Clan Fitness',
+    galleryLabel: 'Screens',
+    galleryTitle: 'Screens from the live app',
+    galleryDescription: 'These screenshots are from the production app at clanfitness.in.',
+    galleryImages: [
+      { url: getAssetPath('images/clan-fitness-feed.png'), caption: "The clan feed shows everyone's check-ins with reactions and comments, plus the weekly Wall of Fame." },
+      { url: getAssetPath('images/clan-fitness-log.png'), caption: 'The daily log. Weekly gym days and your streak are at the top, followed by gym, steps, and food, which takes up to three photos.' },
+      { url: getAssetPath('images/clan-fitness-leaderboard.png'), caption: "The leaderboard compares each member's steps against their own goal, along with gym days and streaks. It can show today, this week, or this month." },
+      { url: getAssetPath('images/clan-fitness-contracts.png'), caption: 'Contracts are daily challenges, such as beating your own seven-day step average or winning a duel. Each one is worth points toward your level.' },
+    ],
+    outcomeDetailsTitle: 'Results so far',
+    outcomeDetailsIntro: 'Clan Fitness started as a problem in a group chat and is now a live app that real groups use. I merged over 100 pull requests in the first 17 days, most of them prompted by tester feedback.',
+    outcomeDetails: [
+      { title: '41 people, 13 clans', description: 'Groups of friends holding each other accountable.' },
+      { title: '1,100+ check-ins', description: 'Gym, steps, and food logs since launch in July 2026.' },
+      { title: '2,100+ interactions', description: 'Over 1,700 reactions and almost 400 comments on check-ins.' },
+      { title: '113 pull requests', description: 'Merged in the 17 days from first commit to contracts and duels.' },
+    ],
+  },
+  {
     id: 'memo-io-multiplayer-game',
-    title: 'memo.io — A Real-Time \nMultiplayer Memory Game',
+    title: 'memo.io: a real-time \nmultiplayer memory game',
     role: 'Product Designer, Solo Build',
     timeline: '1 Week',
     platform: 'Web / Discord Activity',
     company: 'Personal Project',
     tags: ['AI-Assisted Build', 'Real-Time Multiplayer', 'Personal Project'],
-    description: 'Designed and solo-built a real-time multiplayer memory game — from written brief to a production Discord Activity — using Claude as an AI development partner.',
-    overview: `As a product designer, most of what I ship lives in Figma — flows, prototypes, specs handed off to engineering. I wanted to prove I could take an idea all the way to a real, technically complex, production product on my own — not a static mockup, but something people could actually play together in real time.
+    description: 'A real-time multiplayer memory game I designed and built on my own in a week, from a written brief to a live Discord Activity, with Claude as my coding partner.',
+    overview: `As a product designer, most of my work ends in Figma as flows, prototypes, and specs that engineers then build. I wanted to find out whether I could take an idea all the way to a working product by myself, so I picked something technically hard enough to be a real test: a game people play together in real time.
 
-I designed and built memo.io, a real-time multiplayer memory-matching game, using Claude as an AI development partner across the entire stack — a Socket.io backend, a React frontend, anti-cheat game logic, three game modes, six visual themes, and a native Discord Activity integration — then shipped it to production.`,
-    challenge: "Most designer portfolios stop at high-fidelity mockups. There's rarely a way to show whether a designer actually understands what it takes to make something real — state management, real-time sync, server authority, deployment — the parts that decide whether a product actually works.",
-    solution: 'I designed and built the entire system myself — real-time architecture, anti-cheat logic, three game modes, six card themes, and a native Discord Activity — shipping it to production as a working proof of both product thinking and execution.',
+memo.io is a multiplayer memory-matching game. I built it with Claude as a development partner. It has a Socket.io backend, a React frontend, server-side anti-cheat, three game modes, six card themes, and a Discord Activity version, and it's live in production.`,
+    challenge: "Designer portfolios usually stop at high-fidelity mockups, which can't show whether the designer understands what it takes to make the product work. State management, real-time sync, server authority, and deployment all shape how a product behaves, and none of them appear in a mockup.",
+    solution: 'I designed and built the whole system myself, including the real-time architecture, anti-cheat logic, game modes, card themes, and Discord integration, and shipped it to production.',
     goalsLabel: 'The Goal',
-    goalsTitle: 'A Real Product, Not Just a Prototype',
-    goalsDescription: "To prove design thinking translates into working software, I focused on four things a portfolio mockup can't show: real-time architecture, competitive integrity, replayability, and reach beyond a single browser tab.",
+    goalsTitle: 'Something people can play',
+    goalsDescription: "I focused on four things a mockup can't show: real-time sync, fair play, replay value, and reach beyond a single browser tab.",
     goals: [
       {
-        title: 'Real-Time Multiplayer Architecture',
-        description: 'Every player races on their own grid, synced by a Socket.io backend with sub-second updates — no turns, no polling, no lag.',
+        title: 'Real-time multiplayer',
+        description: 'Each player races through their own grid. A Socket.io backend keeps everyone in sync with sub-second updates, and nobody has to wait for a turn.',
       },
       {
-        title: 'Competitive Integrity by Design',
-        description: 'The server never sends the full deck to any client — only per-flip reveals, rate-limiting, and index validation. Anti-cheat is architecture, not an afterthought.',
+        title: 'Fair play enforced by the server',
+        description: 'The server never sends the full deck to a client. It reveals one card per flip, rate-limits moves, and checks every card index, so the game is hard to cheat by design.',
       },
       {
-        title: 'Replayability Through Modes & Themes',
-        description: 'Three formats — Quick, League, and Powers (with offensive power-ups) — across six visual themes, from emoji to Dota 2 heroes.',
+        title: 'Modes and themes for replay value',
+        description: 'There are three formats: Quick, League, and Powers, which adds offensive power-ups. Cards come in six themes, from emoji to Dota 2 heroes.',
       },
       {
-        title: 'Cross-Platform Reach',
-        description: 'Shipped as a native Discord Activity, playable directly inside a voice channel — not just a standalone website.',
+        title: 'Playable inside Discord',
+        description: 'memo.io also runs as a Discord Activity, so people can play it in a voice channel without leaving Discord.',
       }
     ],
     processLabel: 'The Process',
-    processTitle: 'How It Actually Got Built',
-    processDescription: "Not a weekend hackathon demo — a deliberate build, scoped like a real feature and shipped like one.",
+    processTitle: 'How it got built',
+    processDescription: 'I scoped and shipped it the way I would a feature at work.',
     processSteps: [
       {
-        title: 'Started With a Written Brief',
-        description: "Rather than jumping straight into code, I wrote a full product brief first — session flow, game mechanics, live leaderboard behavior, and technical architecture — the same way I'd scope a feature for engineering.",
+        title: 'Writing the brief first',
+        description: "Before writing any code, I wrote a product brief covering the session flow, game mechanics, live leaderboard behavior, and technical architecture, the same way I'd scope a feature for engineering.",
       },
       {
-        title: 'Built and Iterated With Claude',
-        description: 'In just one week and over 100 commits, I used Claude as a hands-on development partner — building the Socket.io backend, the React frontend, and iterating through game modes, power-ups, card themes, and a full Discord Activity integration.',
+        title: 'Building with Claude',
+        description: 'Over one week and more than 100 commits, I worked with Claude to build the Socket.io backend and the React frontend, then iterated on game modes, power-ups, card themes, and the Discord Activity integration.',
       },
       {
-        title: 'Shipped to Production',
-        description: 'The game runs on a Vercel-hosted frontend and a Railway-hosted real-time backend — including, most recently, a live infrastructure migration to a new hosting account with zero disruption to players.',
+        title: 'Shipping to production',
+        description: 'The frontend is hosted on Vercel and the real-time backend on Railway. I recently moved the backend to a new hosting account without interrupting anyone who was playing.',
       }
     ],
     imageUrl: getAssetPath('images/memo-io-gameplay.png'),
     thumbnailUrl: getAssetPath('images/memo-io-home.png'),
     liveUrl: 'https://memo-io.vercel.app',
-    liveUrlText: 'Play memo.io Live',
-    galleryLabel: 'Visuals',
-    galleryTitle: 'From Brief to Build: Live Product Screens',
-    galleryDescription: 'These are real screens from the deployed game, not mockups — every state shown here is running in production. More gameplay and Discord Activity screens coming soon.',
+    liveUrlText: 'Play memo.io',
+    galleryLabel: 'Screens',
+    galleryTitle: 'Screens from the live game',
+    galleryDescription: "These are screenshots of the deployed game. I'll add more gameplay and Discord screens soon.",
     galleryImages: [
-      { url: getAssetPath('images/memo-io-home.png'), caption: 'The landing screen: pick an avatar, name yourself, and create or join a session — no account needed.' },
-      { url: getAssetPath('images/memo-io-lobby.png'), caption: 'The lobby: the host picks difficulty, card theme, and one of three game modes before everyone readies up.' },
-      { url: getAssetPath('images/memo-io-gameplay.png'), caption: 'Live gameplay: every player races on their own grid while the sidebar tracks real-time standings.' },
+      { url: getAssetPath('images/memo-io-home.png'), caption: 'The landing screen. Players pick an avatar and a name, then create or join a session. No account is needed.' },
+      { url: getAssetPath('images/memo-io-lobby.png'), caption: 'The lobby, where the host picks the difficulty, card theme, and game mode before everyone readies up.' },
+      { url: getAssetPath('images/memo-io-gameplay.png'), caption: 'Live gameplay. Each player works through their own grid while the sidebar shows the standings in real time.' },
     ],
-    outcomeDetailsTitle: 'What Shipped',
-    outcomeDetailsIntro: 'memo.io went from a one-page brief to a fully working, production-deployed product — real-time multiplayer, three game modes, and a native Discord Activity integration, built solo with AI as a development partner.',
+    outcomeDetailsTitle: 'What shipped',
+    outcomeDetailsIntro: 'memo.io went from a one-page brief to a live game with real-time multiplayer, three game modes, and a Discord Activity. I built it on my own, with AI as a development partner.',
     outcomeDetails: [
-      { title: '100+ Commits, 1 Week', description: 'From a written product brief to a fully shipped, production-deployed game.' },
-      { title: '3 Game Modes', description: 'Quick, League (best-of series with round history), and Powers (offensive power-ups).' },
-      { title: '6 Card Themes', description: 'Emoji, playing cards, flags, zodiac, Pokémon, and Dota 2 heroes.' },
-      { title: 'Live on Web + Discord', description: 'Deployed on Vercel and Railway, playable directly inside a Discord Activity.' },
+      { title: '100+ commits in a week', description: 'From the written brief to a game running in production.' },
+      { title: '3 game modes', description: 'Quick, League (a best-of series with round history), and Powers (with offensive power-ups).' },
+      { title: '6 card themes', description: 'Emoji, playing cards, flags, zodiac, Pokémon, and Dota 2 heroes.' },
+      { title: 'Live on web and Discord', description: 'Hosted on Vercel and Railway, and playable as a Discord Activity.' },
     ],
   },
   {
     id: 'scalable-mentorship-auzmor',
-    title: 'Scalable Mentorship for \nAuzmor Learn',
+    title: 'Scalable mentorship for \nAuzmor Learn',
     role: 'Senior Product Designer',
     timeline: '6 Months',
     tags: ['UX Strategy', 'Enterprise SaaS', 'Zero-to-One'],
-    description: 'Expanding the LMS ecosystem to support scalable, goal-driven relationships between employees.',
-    overview: `Many enterprise teams struggled to run structured mentorship programs with clear goals. Information was scattered across tools, expectations were unclear, and progress was almost impossible to track in one place.
+    description: 'Adding structured, goal-based mentorship between employees to the Auzmor Learn LMS.',
+    overview: `Many enterprise teams struggled to run structured mentorship programs. Information was spread across different tools, expectations were unclear, and there was no single place to track progress.
 
-I designed a scalable Mentorship System inside Auzmor Learn that brought everything together in a single flow. The solution introduced clear goals for every mentorship, consistent training paths, built-in feedback, and transparent progress tracking. It also provided dedicated experiences for admins, mentors, and learners to keep the entire program organized and easy to manage.`,
-    challenge: 'LMS lacked a structured framework for scalable mentorship, resulting in informal, untracked, and ineffective coaching relationships between employees.',
-    solution: 'The solution introduced clear goals for every mentorship, consistent training paths, built-in feedback, and transparent progress tracking. It also provided dedicated experiences for admins, mentors, and learners to keep the entire program organized and easy to manage.',
+I designed a mentorship system inside Auzmor Learn that brought all of this into one flow. Every mentorship has clear goals, a consistent training path, built-in feedback, and visible progress. Admins, mentors, and learners each get their own experience, which keeps the program organized and easy to manage.`,
+    challenge: 'The LMS had no way to run mentorship at scale, so coaching between employees happened informally and nobody tracked whether it was working.',
+    solution: 'Each mentorship gets clear goals, a consistent training path, built-in feedback, and progress tracking. Admins, mentors, and learners each have their own view, so the program stays organized.',
+    goalsLabel: 'The Goal',
+    goalsTitle: 'A mentorship system that scales',
+    goalsDescription: 'We built the feature around four needs: structure for each program, flexibility in how people are paired, visibility for admins, and a shared space for mentors and mentees.',
     goals: [
       {
-        title: 'Define Goals & Milestones',
-        description: 'Admins can set up structured programs with clear objectives, timelines, and success criteria to ensure mentorship is purposeful.',
+        title: 'Define goals and milestones',
+        description: 'Admins set up programs with clear objectives, timelines, and success criteria, so every mentorship has a purpose.',
         imageUrl: getAssetPath('images/gallery/goal-2.png')
       },
       {
-        title: 'Pair Mentors and Mentees',
-        description: 'Flexible matching algorithms allow admins to assign mentors or let employees self-select based on skills and career aspirations.',
+        title: 'Pair mentors and mentees',
+        description: 'Admins can assign mentors directly, or let employees pick one based on skills and career goals.',
         imageUrl: getAssetPath('images/gallery/goal-1.png')
       },
       {
-        title: 'Enable Content Sharing, Meeting Notes & Feedback',
-        description: 'A dedicated workspace for mentors and mentees to share resources, track meeting outcomes, and provide continuous feedback.',
+        title: 'Share content, meeting notes, and feedback',
+        description: 'Mentors and mentees get a shared workspace to exchange resources, record what came out of each meeting, and give each other feedback.',
         imageUrl: getAssetPath('images/gallery/goal-3.png')
       },
       {
-        title: 'Give Admins Full Visibility',
-        description: 'Admins could easily manage thousands of mentorship connections.',
+        title: 'Give admins full visibility',
+        description: 'Admins can manage thousands of mentorship connections from one place.',
         imageUrl: getAssetPath('images/gallery/goal-4.png')
       }
     ],
     imageUrl: getAssetPath('images/auzmor-mentorship-hero.png'),
     thumbnailUrl: getAssetPath('images/auzmor-mentorship-thumbnail.png'),
-    outcome: 'The Mentorship Platform was successfully rolled out to enterprise clients, becoming a core part of the LMS ecosystem. It facilitated structured goal setting and improved mentor-mentee engagement.',
+    outcome: 'The mentorship platform rolled out to enterprise clients and became a core part of the LMS. It gave teams a structured way to set goals, and mentors and mentees engaged with each other more.',
+    galleryTitle: 'From Figma to code: final UI screens',
+    galleryDescription: 'These screens show how admins, mentors, and mentees each work with goals, milestones, and feedback in the finished feature.',
     galleryImages: [
-      { url: getAssetPath('images/gallery/program-creation.png'), caption: 'Admins can easily create and structure mentorship programs with defined goals and timelines.' },
-      { url: getAssetPath('images/gallery/mentee-profile.png'), caption: 'Mentors get a comprehensive view of their mentees, including their skills, goals, and progress.' },
-      { url: getAssetPath('images/gallery/milestone-details.png'), caption: 'Clear milestones help track progress and ensure the mentorship stays on course.' },
-      { url: getAssetPath('images/gallery/mentorship-analytics.png'), caption: 'Detailed analytics provide insights into program engagement and effectiveness.' }
+      { url: getAssetPath('images/gallery/program-creation.png'), caption: 'Admins create mentorship programs and set their goals and timelines.' },
+      { url: getAssetPath('images/gallery/mentee-profile.png'), caption: "Mentors see each mentee's skills, goals, and progress in one view." },
+      { url: getAssetPath('images/gallery/milestone-details.png'), caption: 'Milestones make it easy to see whether a mentorship is on track.' },
+      { url: getAssetPath('images/gallery/mentorship-analytics.png'), caption: 'Analytics show how engaged people are and how well each program is working.' }
     ],
   },
   {
     id: 'ramco-systems-redesign',
-    title: 'Ramco Systems Redesign with Design System',
+    title: 'Ramco Systems redesign with a design system',
     role: 'UI Designer',
     timeline: '6 Months',
     tags: ['Design Systems', 'Prototyping', 'Legacy Modernization'],
-    description: 'Transforming a 13-year-old legacy platform into a modern, approachable interface without losing data density capabilities.',
-    overview: 'The platform being a legacy application serving them for more than thirteen years and the application is built with the help of automation code. The application involves high data entry and form field structure with few call to actions to guide the user.',
-    challenge: 'The application is purely built on automation code depending on the mental model of the user with high learning curve. There was no clear information hierarchy or visual structure being used the application. The users wanted a more modern way of information representation with a clean interface.',
-    solution: 'We choose atomic & molecular design systems as they act as an independent lego blocks which can be used and also provides us full control over the visual treatment of the platform we are building.',
+    description: 'Giving a 13-year-old legacy platform a modern, easier interface while keeping the data density its users rely on.',
+    overview: 'The platform is a legacy application that has served the client for more than thirteen years, and it was built with automation code. It involves a lot of data entry and form fields, with few calls to action to guide the user.',
+    challenge: "Because the application was built entirely on automation code, using it depended on the user's mental model, and the learning curve was steep. There was no clear information hierarchy or visual structure. Users wanted information presented in a more modern way, with a clean interface.",
+    solution: 'We chose atomic and molecular design systems because they work like independent Lego blocks and give us full control over the visual treatment of the platform.',
     userResearch: {
-      title: 'Who Are The Users?',
-      description: 'Based on the initial user interviews with product owners, we identified key expectations and usage patterns that would guide our design direction:',
+      title: 'Who are the users?',
+      description: 'Initial interviews with product owners showed us what users expected and how they worked, which guided our design direction:',
       points: [
-        { title: 'Familiar Tools', description: 'Users were accustomed to enterprise tools like MS Excel, MS Teams, and MS Outlook — all of which rely heavily on manual data entry and dense interfaces.' },
-        { title: 'Pain Points', description: 'The repetitive and rigid nature of these tools made workflows feel tedious and overwhelming.' },
-        { title: 'Design Opportunity', description: 'There was a clear need for a more modern, refreshing interface — one that simplifies information input while offering a clean, user-friendly visual structure.' }
+        { title: 'Familiar tools', description: 'Users were used to enterprise tools like MS Excel, MS Teams, and MS Outlook, all of which rely heavily on manual data entry and dense interfaces.' },
+        { title: 'Pain points', description: 'These tools are repetitive and rigid, which made everyday work feel tedious and overwhelming.' },
+        { title: 'Design opportunity', description: 'Users needed a more modern interface that makes entering information simpler and has a clean, easy-to-read visual structure.' }
       ]
     },
     designSystem: {
-      title: 'Introducing Design System',
-      description: 'A Design System is a set of interconnected patterns and shared practices coherently organized. Design Systems aid in digital product design and development of products such as apps or websites.\n\nThe system can be broken down into different types based on the need of the product',
+      title: 'Introducing the design system',
+      description: 'A design system is a set of connected patterns and shared practices. Teams use one to design and build products such as apps and websites consistently.\n\nA design system can be broken down into different levels depending on what the product needs.',
       points: [
         { title: 'Atomic', icon: 'atom' },
         { title: 'Molecular', icon: 'molecule' },
@@ -184,18 +271,18 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
       ]
     },
     buildingDesignSystem: {
-      title: 'BUILDING THE DESIGN SYSTEM',
-      description: 'We choose atomic & molecular design systems as they act as an independent lego blocks which can be used and also provides us full control over the visual treatment of the platform we are building.',
+      title: 'Building the design system',
+      description: 'We chose atomic and molecular design systems because they work like independent Lego blocks and give us full control over the visual treatment of the platform.',
       points: [
         { title: 'Atomic', icon: 'atom' },
         { title: 'Molecular', icon: 'molecule' }
       ],
-      secondaryDescription: 'The first step of building a design system involves in creating a checklist of all the components that might be used in the platform.\nAn Atomic-level component is the smallest component in the design system followed my Molecular-level component which can be used to create dynamic and scalable screen designs.'
+      secondaryDescription: 'The first step in building a design system is making a checklist of every component the platform might use.\nAn atomic component is the smallest unit in the system. Molecular components are built from atomic ones and are used to create flexible screen designs that scale.'
     },
     atomicComponents: {
-      title: 'Atomic Components',
+      title: 'Atomic components',
       subtitle: 'LAYOUT',
-      description: 'A layout consists of three main components that allow users to recognise any design. Setting up layout in the first step helps us in creating wireframes for respective products.\n\nThis process helped the client to visualize their product and the outcome of how the design system would impact the visual layout.',
+      description: 'A layout has three main components that make any design recognizable. Setting up the layout first helped us create wireframes for each product.\n\nThis step let the client picture their product and see how the design system would change its visual layout.',
       tags: ['Improved balance', 'Clear visibility', 'Clean visuals'],
       images: [
         getAssetPath('images/ramco-atomic-1.png'),
@@ -210,54 +297,56 @@ I designed a scalable Mentorship System inside Auzmor Learn that brought everyth
     },
     processSteps: [
       {
-        title: 'Foundation: Grid & Spacing',
-        description: 'We followed a free-flowing 8-point grid system which provides us the freedom to align elements adjacent to each other. We used a Twelve column grid structure similar to Bootstrap with sixteen pixels gutter.',
+        title: 'Foundation: grid and spacing',
+        description: 'We used a free-flowing 8-point grid, which let us align elements next to each other freely, with a 12-column structure similar to Bootstrap and 16px gutters.',
       },
       {
         title: 'Typography',
-        description: 'We wanted to go for an open-source typeface that provides premium look and feel to the application, here information is weighed more than the aesthetic preference.\n\nBy using Modular Scale, we were able to structure the respective heading tags and other font sizes that are required based on the needs of the application.',
+        description: 'We wanted an open-source typeface with a premium feel, but in this application information matters more than aesthetics.\n\nWe used a modular scale to set the heading sizes and the other font sizes the application needed.',
         imageUrl: getAssetPath('images/ramco-typography.png')
       },
       {
-        title: 'Color Palette',
-        description: 'A total of 48 different colors were introduced for specific purposes, ensuring a consistent and accessible visual language across the platform.',
+        title: 'Color palette',
+        description: 'We introduced 48 colors, each with a specific purpose, to keep the visual language consistent and accessible across the platform.',
         imageUrl: getAssetPath('images/ramco-colors.png')
       },
       {
-        title: 'Molecular Components',
-        description: 'Molecular components are created with several combinations of atomic components that we defined earlier. These components can also be considered atomic level based on how small it is compared to a large molecular component.'
+        title: 'Molecular components',
+        description: 'Molecular components are combinations of the atomic components we defined earlier. A small molecular component can also count as atomic when compared with a large one.'
       },
       {
         title: 'Buttons',
-        description: 'A button is an action element that allows a user to decide at a crucial point of the navigation or a flow. The color contrast of the button follows WCAG guidelines for accessibility to support users with different accessibility issues.'
+        description: 'A button lets the user make a decision at an important point in a flow. Button color contrast follows WCAG guidelines so the buttons work for users with different accessibility needs.'
       },
       {
         title: 'Textbox',
-        description: 'Textboxes are the most essential components when it comes to data entry and forms, the component is composed of Text Area, Title label, Underline caption, Iconography.\n\nThe spacing between the elements is measured at 8px in order to create a uniform structure with respect to free flowing eight point grid system.',
+        description: 'Textboxes are the most important components for data entry and forms. Each one has a text area, a title label, an underline caption, and icons.\n\nThe elements are spaced 8px apart to match the free-flowing 8-point grid.',
         imageUrl: getAssetPath('images/ramco-textbox.png')
       }
     ],
-    outcome: 'Improved user comprehension through better visual hierarchy and established a scalable design language. I got a clear idea how a design system is very important and an integral part of any product and how it could impact the scalability and visual design of the platform in the future.',
+    outcome: 'The new visual hierarchy made the application easier to understand, and the client now has a design language that can scale. The project taught me how much a design system matters to a product and how it affects the scalability and visual design of a platform over time.',
     imageUrl: getAssetPath('images/ramco-redesign-v2.png'),
     thumbnailUrl: getAssetPath('images/ramco-thumbnail.png'),
+    galleryTitle: 'Final UI screens',
+    galleryDescription: 'Screens from the redesigned HR modules, built with the new design system.',
     galleryImages: [
-      { url: getAssetPath('images/ramco-dashboard-leave.png'), caption: 'Employee Dashboard: Leave Balance & Quick Actions' },
-      { url: getAssetPath('images/ramco-leave-calendar.png'), caption: 'Leave Calendar: Team Availability View' },
-      { url: getAssetPath('images/ramco-holiday-mapping.png'), caption: 'Holiday Mapping: Location-based Configuration' },
-      { url: getAssetPath('images/ramco-holiday-master.png'), caption: 'Holiday Master: Global Holiday Management' },
-      { url: getAssetPath('images/ramco-employee-profile.png'), caption: 'Employee Profile: Family Information Management' },
-      { url: getAssetPath('images/ramco-qualification-master.png'), caption: 'Qualification Master: Educational Records Setup' }
+      { url: getAssetPath('images/ramco-dashboard-leave.png'), caption: 'Employee dashboard: leave balance and quick actions' },
+      { url: getAssetPath('images/ramco-leave-calendar.png'), caption: 'Leave calendar: team availability' },
+      { url: getAssetPath('images/ramco-holiday-mapping.png'), caption: 'Holiday mapping: settings by location' },
+      { url: getAssetPath('images/ramco-holiday-master.png'), caption: 'Holiday master: company-wide holiday management' },
+      { url: getAssetPath('images/ramco-employee-profile.png'), caption: 'Employee profile: family information' },
+      { url: getAssetPath('images/ramco-qualification-master.png'), caption: 'Qualification master: setting up education records' }
     ]
   },
   {
     id: 'ui-concept-exploration',
-    title: 'UI & Concept Exploration',
+    title: 'UI and concept exploration',
     role: 'Visual Designer',
     tags: ['Exploration', 'Ideas', 'Concepts'],
-    description: 'A collection of forward-thinking concepts exploring the design space of interfaces.',
+    description: 'Interface concepts and visual experiments, mostly posted on Dribbble.',
     imageUrl: getAssetPath('images/ui-concept-thumbnail.png'),
     link: 'https://dribbble.com/yugeshralli',
-    ctaText: 'View Other Designs',
+    ctaText: 'View More on Dribbble',
     isGallery: true
   }
 ];
@@ -268,28 +357,28 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: 'Senior Product Designer',
     company: 'Vectramind',
     period: 'Jan 2026 - Present',
-    description: 'Leading design initiatives for enterprise scalability for Healthcare & Communication domain.'
+    description: 'Leading design for enterprise products in healthcare and communication.'
   },
   {
     id: '2',
     role: 'Senior Product Designer',
     company: 'Auzmor',
     period: 'Jun 2022 - Jun 2025',
-    description: 'Led major design initiatives across Auzmor’s Employee Experience Suite. Rose from Associate to Senior Product Designer, contributing to the LMS platform\'s growth from zero-to-one features to enterprise scalability.'
+    description: 'Led design across Auzmor\'s Employee Experience Suite and grew from Associate to Senior Product Designer. I worked on the LMS from its first zero-to-one features through to enterprise scale.'
   },
   {
     id: '3',
     role: 'Associate Senior UI/UX Designer',
     company: 'Lollypop Design Studio',
     period: 'Sep 2019 - Dec 2021',
-    description: 'Delivered high-quality UI/UX solutions for diverse clients including Hexaware, Cisco, and Intel. Progressed from Associate to Associate Senior Designer, mentoring junior designers and leading project deliverables.'
+    description: 'Designed UI and UX for clients including Hexaware, Cisco, and Intel. Grew from Associate to Associate Senior Designer, mentored junior designers, and led project deliverables.'
   },
   {
     id: '4',
     role: 'Web Development Intern',
     company: 'Sentinel Radiology Solutions',
     period: 'Dec 2017 - Mar 2018',
-    description: 'Sentinel Radiology Solutions is a Tele-healthcare startup with over 70 clients across various geographical boundaries.'
+    description: 'Sentinel Radiology Solutions is a telehealth startup with more than 70 clients in several countries.'
   },
   {
     id: '5',
